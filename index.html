@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#142D59">
+<meta name="description" content="Entry's Knowledge Hub — A colorful personal space for learning, thinking and creating.">
+
+<title>Entry's Knowledge Hub | Think. Explore. Create.</title>
+
+<style>
+/* =====================================================
+   ENTRY'S KNOWLEDGE HUB
+   ART EDITION 1.0
+   Bold Color × Abstract Geometry
+   ===================================================== */
+
+/* 01. DESIGN TOKENS
+----------------------------------------------------- */
+
+:root {
+  --bg: #F6EEDC;
+  --paper: #FFFDF8;
+  --white: #FFFFFF;
+  --ink: #202B40;
+  --muted: #777568;
+  --line: #E6DCC8;
+
+  --blue: #2457A6;
+  --deep-blue: #142D59;
+  --yellow: #FFD52A;
+  --red: #F04E37;
+  --orange: #F28A36;
+  --teal: #24A89A;
+  --green: #A9C957;
+  --purple: #A58AD8;
+  --pink: #F28B9B;
+
+  --sidebar-width: 270px;
+  --content-width: 1200px;
+
+  --radius: 5px;
+  --shadow: 0 8px 24px rgba(31, 43, 64, .07);
+}
+
+/* 02. RESET & GLOBAL
+----------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--deep-blue);
+}
+
+/* 03. SIDEBAR
+----------------------------------------------------- */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--deep-blue);
+  padding: 30px 20px 35px;
+  overflow-y: auto;
+  z-index: 100;
+  color: white;
+  box-shadow: 5px 0 25px rgba(20,45,89,.08);
+  scrollbar-width: thin;
+  scrollbar-color: #536B91 transparent;
+}
+
+.brand {
+  padding: 3px 10px 25px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.brand h2 {
+  font-family: Georgia, serif;
+  color: var(--yellow);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -.6px;
+}
+
+.brand p {
+  color: #C6D3E7;
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 9px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 5px;
+  background: var(--yellow);
+  margin-top: 17px;
+  border-radius: 10px;
+}
+
+.nav-label {
+  color: #91A9CB;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 25px 10px 9px;
+}
+
+.nav-link,
+.nav-toggle {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  color: #E7EDF7;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.nav-link:hover,
+.nav-toggle:hover {
+  background: rgba(255,255,255,.12);
+  color: var(--yellow);
+}
+
+.nav-link.active {
+  color: var(--deep-blue);
+  background: var(--yellow);
+  font-weight: 700;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.nav-icon {
+  width: 19px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.nav-toggle[aria-expanded="true"] {
+  color: var(--yellow);
+}
+
+.nav-arrow {
+  color: #AFC4E2;
+  font-size: 15px;
+  transition: transform .25s;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-arrow {
+  transform: rotate(90deg);
+}
+
+.subnav {
+  display: none;
+  padding: 2px 0 7px 29px;
+}
+
+.subnav.open {
+  display: block;
+}
+
+.subnav a {
+  display: block;
+  padding: 8px 10px;
+  color: #BFCFE5;
+  font-size: 11px;
+  border-left: 1px solid rgba(255,255,255,.25);
+  transition: .2s;
+}
+
+.subnav a:hover {
+  color: var(--yellow);
+  padding-left: 15px;
+}
+
+/* 04. MAIN LAYOUT
+----------------------------------------------------- */
+
+.main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 66px;
+  padding: 0 5.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar-label {
+  color: var(--blue);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topbar-right a {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.topbar-right a:hover {
+  color: var(--blue);
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.content {
+  max-width: var(--content-width);
+  padding: 48px 5.5% 70px;
+  margin: auto;
+}
+
+/* 05. HERO
+----------------------------------------------------- */
+
+.hero {
+  min-height: 390px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 55px 6%;
+  background: var(--blue);
+  border-radius: var(--radius);
+  color: white;
+}
+
+.hero-content {
+  max-width: 590px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--yellow);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background: var(--yellow);
+}
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(39px, 5vw, 65px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -1.8px;
+  margin: 24px 0 20px;
+}
+
+.hero-description {
+  max-width: 470px;
+  color: #E1E9F6;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  min-height: 42px;
+  background: var(--yellow);
+  color: var(--deep-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: 2px solid var(--yellow);
+  border-radius: 2px;
+  transition: .25s;
+}
+
+.hero-button:hover {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.hero-button.secondary {
+  background: transparent;
+  border-color: rgba(255,255,255,.7);
+  color: white;
+}
+
+.hero-button.secondary:hover {
+  background: white;
+  color: var(--blue);
+  border-color: white;
+}
+
+/* Hero geometric decoration */
+
+.hero-art {
+  position: absolute;
+  right: 4%;
+  top: 0;
+  bottom: 0;
+  width: 42%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.art-circle {
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: var(--yellow);
+  top: 5%;
+  right: 8%;
+}
+
+.art-circle-inner {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--red);
+  top: 23%;
+  right: 22%;
+  border: 9px solid var(--blue);
+}
+
+.art-square {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: var(--teal);
+  bottom: 5%;
+  right: 50%;
+  transform: rotate(20deg);
+}
+
+.art-ring {
+  position: absolute;
+  width: 165px;
+  height: 165px;
+  border: 14px solid var(--purple);
+  border-radius: 50%;
+  right: -2%;
+  bottom: -13%;
+}
+
+.art-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  left: 3%;
+  top: 22%;
+}
+
+/* 06. SECTION HEADINGS
+----------------------------------------------------- */
+
+.section {
+  margin-top: 58px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.section-title-group h2 {
+  font-family: Georgia, serif;
+  color: var(--deep-blue);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -.6px;
+}
+
+.section-title-group p {
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.section-link {
+  font-size: 11px;
+  color: var(--red);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-link:hover {
+  color: var(--blue);
+}
+
+/* 07. KNOWLEDGE CATEGORY CARDS
+----------------------------------------------------- */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.category-card {
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  padding: 23px 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.category-card:hover {
+  transform: translateY(-6px) rotate(-.4deg);
+  box-shadow: 0 13px 25px rgba(40,40,40,.13);
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  right: -26px;
+  bottom: -32px;
+  border: 12px solid rgba(255,255,255,.4);
+  border-radius: 50%;
+  transition: transform .3s;
+}
+
+.category-card:hover::after {
+  transform: scale(1.2) rotate(30deg);
+}
+
+.category-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-number {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(32,43,64,.65);
+}
+
+.category-symbol {
+  font-size: 23px;
+  color: rgba(32,43,64,.75);
+}
+
+.category-card h3 {
+  color: #172D50;
+  font-size: 16px;
+  font-weight: 750;
+  margin: 15px 0 6px;
+}
+
+.category-card p {
+  color: #34445B;
+  font-size: 11px;
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+.category-arrow {
+  display: inline-block;
+  margin-top: 12px;
+  color: #172D50;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Individual category colors */
+
+.category-yellow {
+  background: var(--yellow);
+}
+
+.category-blue {
+  background: #A9C9F0;
+}
+
+.category-red {
+  background: #F28B78;
+}
+
+.category-teal {
+  background: #77C7B7;
+}
+
+.category-purple {
+  background: var(--purple);
+}
+
+.category-orange {
+  background: #F4B96D;
+}
+
+/* 08. FEATURED COLLECTIONS
+----------------------------------------------------- */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 17px;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  padding: 27px;
+  border-radius: 4px;
+  transition: transform .25s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-main {
+  background: var(--yellow);
+}
+
+.feature-secondary {
+  background: #C7DDF2;
+}
+
+.feature-tag {
+  position: relative;
+  z-index: 2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #8A3C2B;
+}
+
+.feature-secondary .feature-tag {
+  color: var(--blue);
+}
+
+.feature-card h3 {
+  position: relative;
+  z-index: 2;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--deep-blue);
+  max-width: 350px;
+  margin-top: 22px;
+}
+
+.feature-card p {
+  position: relative;
+  z-index: 2;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #5C594C;
+  max-width: 360px;
+  margin-top: 11px;
+}
+
+.feature-secondary p {
+  color: #51667E;
+}
+
+.feature-action {
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  margin-top: 18px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--deep-blue);
+}
+
+.feature-action:hover {
+  color: var(--red);
+}
+
+.feature-decoration {
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  border-radius: 50%;
+  background: var(--red);
+  right: -35px;
+  top: -35px;
+  opacity: .95;
+}
+
+.feature-secondary .feature-decoration {
+  width: 115px;
+  height: 115px;
+  background: var(--teal);
+  border-radius: 0;
+  transform: rotate(35deg);
+  right: -20px;
+  top: auto;
+  bottom: -40px;
+}
+
+/* 09. RECENT UPDATES
+----------------------------------------------------- */
+
+.update-list {
+  padding: 4px 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.update-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 19px 0;
+  border-bottom: 1px solid #EEE6D8;
+  transition: .2s;
+}
+
+.update-item:last-child {
+  border-bottom: none;
+}
+
+.update-item strong {
+  display: block;
+  color: var(--deep-blue);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.update-item:hover strong {
+  color: var(--red);
+}
+
+.update-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.update-item time {
+  color: #999487;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* 10. RESOURCE BANNER
+----------------------------------------------------- */
+
+.resource-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 32px;
+  background: var(--red);
+  border-radius: 4px;
+}
+
+.resource-content {
+  position: relative;
+  z-index: 2;
+}
+
+.resource-banner h3 {
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.resource-banner p {
+  color: #FFE4DB;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.resource-button {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  background: var(--yellow);
+  border: 2px solid var(--yellow);
+  color: var(--deep-blue);
+  padding: 12px 18px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.resource-button:hover {
+  background: var(--deep-blue);
+  border-color: var(--deep-blue);
+  color: white;
+}
+
+.resource-decoration {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 16px solid rgba(255,255,255,.18);
+  border-radius: 50%;
+  right: 18%;
+  top: -75px;
+}
+
+/* 11. FOOTER
+----------------------------------------------------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  margin-top: 65px;
+  padding-top: 22px;
+  color: #817B6E;
+  font-size: 10px;
+}
+
+/* 12. RESPONSIVE
+----------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-art {
+    right: -8%;
+    opacity: .8;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --sidebar-width: 270px;
+  }
+
+  .sidebar {
+    transform: translateX(-105%);
+    transition: transform .3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 30px 20px 55px;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 40px 28px;
+  }
+
+  .hero-art {
+    right: -18%;
+    opacity: .38;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-banner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .resource-decoration {
+    right: -5%;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .topbar-right {
+    gap: 9px;
+  }
+
+  .topbar-right a {
+    font-size: 10px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: 155px;
+  }
+
+  .hero {
+    min-height: 390px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .section {
+    margin-top: 43px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .section-title-group h2 {
+    font-size: 23px;
+  }
+
+  .section-link {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+
+  .update-list {
+    padding: 4px 15px;
+  }
+
+  .update-item {
+    align-items: flex-start;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* 13. REDUCED MOTION ACCESSIBILITY
+----------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================================================
+     LEFT SIDEBAR
+================================================ -->
+
+<aside class="sidebar" id="sidebar">
+
+  <div class="brand">
+    <h2>Entry's<br>Knowledge Hub.</h2>
+    <p>A personal space for learning, thinking and creating.</p>
+    <div class="brand-mark"></div>
+  </div>
+
+  <div class="nav-label">MAIN</div>
+
+  <a class="nav-link active" href="index.html">
+    <span class="nav-left">
+      <span class="nav-icon">⌂</span>
+      Home
+    </span>
+  </a>
+
+  <a class="nav-link" href="about.html">
+    <span class="nav-left">
+      <span class="nav-icon">◈</span>
+      About
+    </span>
+  </a>
+
+  <div class="nav-label">KNOWLEDGE & LEARNING</div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">✳</span>
+      Economics & Politics
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/economics/index.html">Public Affairs</a>
+    <a href="pages/economics/economics.html">Economics</a>
+    <a href="pages/economics/policy.html">Policy & Governance</a>
+    <a href="pages/economics/essay-writing.html">Essay Writing</a>
+  </div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">✧</span>
+      Books & Reading
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/reading/index.html">Reading List</a>
+    <a href="pages/reading/reviews.html">Book Reviews</a>
+    <a href="pages/reading/notes.html">Reading Notes</a>
+    <a href="pages/reading/ideas.html">Ideas from Books</a>
+  </div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">✎</span>
+      English & Languages
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/english/index.html">English Learning</a>
+    <a href="pages/english/cet6/index.html">CET-6</a>
+    <a href="pages/english/ielts/index.html">IELTS</a>
+    <a href="pages/english/postgraduate/index.html">Postgraduate English</a>
+    <a href="pages/english/reading/index.html">English Reading</a>
+    <a href="pages/english/vocabulary/index.html">Vocabulary & Expressions</a>
+  </div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">▦</span>
+      Finance & Accounting
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/finance/index.html">Finance Overview</a>
+    <a href="pages/finance/tax-law.html">CPA Tax Law</a>
+    <a href="pages/finance/government-accounting.html">Government Accounting</a>
+    <a href="pages/finance/international-accounting.html">International Accounting</a>
+    <a href="pages/finance/financial-management.html">Financial Management</a>
+  </div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">✺</span>
+      AI & Technology
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/ai/index.html">AI & Technology</a>
+    <a href="pages/ai/tools.html">AI Tools</a>
+    <a href="pages/ai/digital-transformation.html">Digital Transformation</a>
+    <a href="pages/ai/mini-tools.html">Mini Tools</a>
+  </div>
+
+  <div class="nav-label">EXPLORATION & RESOURCES</div>
+
+  <button class="nav-toggle" aria-expanded="false">
+    <span class="nav-left">
+      <span class="nav-icon">◎</span>
+      Ideas & Exploration
+    </span>
+    <span class="nav-arrow">›</span>
+  </button>
+  <div class="subnav">
+    <a href="pages/exploration/index.html">Ideas & Thoughts</a>
+    <a href="pages/exploration/travel.html">Travel Notes</a>
+    <a href="pages/exploration/photography.html">Photography</a>
+    <a href="pages/exploration/cities.html">Cities & Places</a>
+  </div>
+
+  <a class="nav-link" href="pages/resources/index.html">
+    <span class="nav-left">
+      <span class="nav-icon">▤</span>
+      Resource Library
+    </span>
+  </a>
+
+</aside>
+
+
+<!-- ================================================
+     MAIN CONTENT
+================================================ -->
+
+<div class="main">
+
+  <!-- TOP BAR -->
+
+  <header class="topbar">
+
+    <div class="topbar-left">
+      <button class="menu-button" id="menuButton" aria-label="Open navigation">
+        ☰
+      </button>
+      <span class="topbar-label">PERSONAL KNOWLEDGE SPACE</span>
+    </div>
+
+    <div class="topbar-right">
+      <a href="about.html">About this space ↗</a>
+    </div>
+
+  </header>
+
+
+  <main class="content">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          A WORLD OF IDEAS
+        </div>
+
+        <h1>
+          Think.<br>
+          Explore.<br>
+          Create.
+        </h1>
+
+        <p class="hero-description">
+          Welcome to my little corner of the internet.
+          A growing collection of knowledge, ideas, discoveries
+          and creative projects — exploring finance, economics,
+          languages, technology and the world.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#explore" class="hero-button">
+            EXPLORE THE HUB →
+          </a>
+
+          <a href="about.html" class="hero-button secondary">
+            ABOUT THIS SPACE
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ABSTRACT GEOMETRY -->
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="art-circle-inner"></div>
+        <div class="art-square"></div>
+        <div class="art-ring"></div>
+        <div class="art-dot"></div>
+      </div>
+
+    </section>
+
+
+    <!-- KNOWLEDGE CATEGORIES -->
+
+    <section class="section" id="explore">
+
+      <div class="section-heading">
+
+        <div class="section-title-group">
+          <h2>Explore the Knowledge Hub</h2>
+          <p>Different interests, connected by curiosity.</p>
+        </div>
+
+        <a href="#featured" class="section-link">
+          Discover more →
+        </a>
+
+      </div>
+
+
+      <div class="category-grid">
+
+        <a href="pages/economics/index.html"
+           class="category-card category-yellow">
+
+          <div class="category-top">
+            <span class="category-number">01 / PUBLIC AFFAIRS</span>
+            <span class="category-symbol">✳</span>
+          </div>
+
+          <div>
+            <h3>Economics & Politics</h3>
+            <p>
+              Economics, public policy, governance,
+              social issues and essay writing.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+
+        <a href="pages/reading/index.html"
+           class="category-card category-blue">
+
+          <div class="category-top">
+            <span class="category-number">02 / READING</span>
+            <span class="category-symbol">✧</span>
+          </div>
+
+          <div>
+            <h3>Books & Reading</h3>
+            <p>
+              Books, reviews, reading notes
+              and ideas worth remembering.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+
+        <a href="pages/english/index.html"
+           class="category-card category-red">
+
+          <div class="category-top">
+            <span class="category-number">03 / LANGUAGES</span>
+            <span class="category-symbol">✎</span>
+          </div>
+
+          <div>
+            <h3>English & Languages</h3>
+            <p>
+              English learning, exams, close reading,
+              vocabulary and communication.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+
+        <a href="pages/finance/index.html"
+           class="category-card category-teal">
+
+          <div class="category-top">
+            <span class="category-number">04 / PROFESSIONAL STUDY</span>
+            <span class="category-symbol">▦</span>
+          </div>
+
+          <div>
+            <h3>Finance & Accounting</h3>
+            <p>
+              Taxation, accounting systems,
+              financial management and beyond.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+
+        <a href="pages/ai/index.html"
+           class="category-card category-purple">
+
+          <div class="category-top">
+            <span class="category-number">05 / TECHNOLOGY</span>
+            <span class="category-symbol">✺</span>
+          </div>
+
+          <div>
+            <h3>AI & Technology</h3>
+            <p>
+              Artificial intelligence, digital tools,
+              innovation and new possibilities.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+
+        <a href="pages/exploration/index.html"
+           class="category-card category-orange">
+
+          <div class="category-top">
+            <span class="category-number">06 / THE WORLD</span>
+            <span class="category-symbol">◎</span>
+          </div>
+
+          <div>
+            <h3>Ideas & Exploration</h3>
+            <p>
+              Travel, photography, cities,
+              observations and reflections.
+            </p>
+            <span class="category-arrow">EXPLORE →</span>
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURED COLLECTIONS -->
+
+    <section class="section" id="featured">
+
+      <div class="section-heading">
+
+        <div class="section-title-group">
+          <h2>Featured Collections</h2>
+          <p>Selected learning projects and knowledge collections.</p>
+        </div>
+
+        <span class="section-link">SELECTED WORKS</span>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+        <article class="feature-card feature-main">
+
+          <div class="feature-decoration"></div>
+
+          <div class="feature-tag">
+            ENGLISH LEARNING · FEATURED
+          </div>
+
+          <h3>English Learning Collection</h3>
+
+          <p>
+            A structured learning space for English writing,
+            reading, vocabulary, expressions and exam preparation.
+            Learn through carefully organized lessons and practice.
+          </p>
+
+          <a class="feature-action"
+             href="pages/english/index.html">
+            EXPLORE THE COLLECTION →
+          </a>
+
+        </article>
+
+
+        <article class="feature-card feature-secondary">
+
+          <div class="feature-decoration"></div>
+
+          <div class="feature-tag">
+            FINANCE · LEARNING
+          </div>
+
+          <h3>Finance & Accounting Notes</h3>
+
+          <p>
+            Organizing professional knowledge,
+            from tax law to accounting systems
+            and international financial topics.
+          </p>
+
+          <a class="feature-action"
+             href="pages/finance/index.html">
+            DISCOVER MORE →
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- RECENT UPDATES -->
+
+    <section class="section">
+
+      <div class="section-heading">
+
+        <div class="section-title-group">
+          <h2>Recently Updated</h2>
+          <p>New ideas and materials added to the hub.</p>
+        </div>
+
+        <span class="section-link">LATEST ACTIVITY</span>
+
+      </div>
+
+
+      <div class="update-list">
+
+        <a class="update-item"
+           href="pages/english/index.html">
+
+          <div>
+            <strong>English Writing: Topic Collection</strong>
+            <span>English & Languages · Learning Notes</span>
+          </div>
+
+          <time>Coming soon</time>
+
+        </a>
+
+
+        <a class="update-item"
+           href="pages/finance/index.html">
+
+          <div>
+            <strong>CPA Tax Law Study Notes</strong>
+            <span>Finance & Accounting · Professional Study</span>
+          </div>
+
+          <time>Coming soon</time>
+
+        </a>
+
+
+        <a class="update-item"
+           href="pages/reading/index.html">
+
+          <div>
+            <strong>Books, Ideas and Reflections</strong>
+            <span>Books & Reading · Personal Notes</span>
+          </div>
+
+          <time>Coming soon</time>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESOURCE LIBRARY -->
+
+    <section class="section" id="resources">
+
+      <div class="resource-banner">
+
+        <div class="resource-decoration"></div>
+
+        <div class="resource-content">
+          <h3>The Resource Library</h3>
+          <p>
+            A curated collection of courses, websites,
+            research databases and useful learning tools.
+          </p>
+        </div>
+
+        <a href="pages/resources/index.html"
+           class="resource-button">
+          EXPLORE RESOURCES →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <span>© 2026 Entry's Knowledge Hub</span>
+
+      <span>
+        Learn continuously. Think independently. Stay curious.
+      </span>
+
+    </footer>
+
+  </main>
+
+</div>
+
+
+<!-- ================================================
+     JAVASCRIPT
+================================================ -->
+
+<script>
+
+/* Sidebar expandable navigation */
+
+const navToggles = document.querySelectorAll(".nav-toggle");
+
+navToggles.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const panel = button.nextElementSibling;
+
+    const isExpanded =
+      button.getAttribute("aria-expanded") === "true";
+
+    button.setAttribute(
+      "aria-expanded",
+      String(!isExpanded)
+    );
+
+    panel.classList.toggle("open", !isExpanded);
+
+  });
+
+});
+
+
+/* Mobile navigation */
+
+const sidebar = document.getElementById("sidebar");
+
+const menuButton = document.getElementById("menuButton");
+
+menuButton.addEventListener("click", () => {
+
+  const isOpen = sidebar.classList.toggle("show");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+});
+
+
+/* Close mobile navigation after selecting a link */
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    if (window.innerWidth <= 760) {
+      sidebar.classList.remove("show");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+
+  });
+
+});
+
+
+/* Close sidebar when clicking outside */
+
+document.addEventListener("click", event => {
+
+  if (
+    window.innerWidth <= 760 &&
+    sidebar.classList.contains("show") &&
+    !sidebar.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+
+    sidebar.classList.remove("show");
+    menuButton.setAttribute("aria-expanded", "false");
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
