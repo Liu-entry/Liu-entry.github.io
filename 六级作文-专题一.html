@@ -1,0 +1,2587 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大学英语六级写作专题一：评分标准与基本要求</title>
+
+<style>
+:root {
+  --navy: #172b4d;
+  --blue: #315d91;
+  --gold: #c69b52;
+  --light: #f3f6fa;
+  --text: #263445;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --sidebar-width: 270px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9edf3;
+  color: var(--text);
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  line-height: 1.8;
+}
+
+/* ==============================
+   顶部工具栏
+============================== */
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background: #14243d;
+  color: white;
+  box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+
+.toolbar-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar button {
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.1);
+  color: white;
+  padding: 7px 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.toolbar button:hover {
+  background: rgba(255,255,255,.22);
+}
+
+.toolbar button.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #172b4d;
+}
+
+.page-status {
+  font-size: 13px;
+  color: #d5dfec;
+  min-width: 65px;
+  text-align: center;
+}
+
+.progress-track {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 4px;
+  background: #d7dee8;
+}
+
+.progress-bar {
+  height: 4px;
+  width: 0;
+  background: var(--gold);
+  transition: width .25s;
+}
+
+/* ==============================
+   左侧目录导航
+============================== */
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: #ffffff;
+  border-right: 1px solid #dfe5ed;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 25px 15px 35px;
+}
+
+.sidebar-heading {
+  padding: 0 12px 15px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 15px;
+}
+
+.sidebar-heading .en {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.sidebar-heading h2 {
+  font-size: 17px;
+  color: var(--navy);
+  margin: 5px 0 2px;
+}
+
+.sidebar-heading p {
+  font-size: 11px;
+  color: #8793a3;
+  margin: 0;
+}
+
+.nav-group {
+  margin-bottom: 19px;
+}
+
+.nav-group-title {
+  padding: 5px 12px;
+  margin-bottom: 5px;
+  color: #a17d42;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  margin: 2px 0;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: #526174;
+  text-align: left;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+
+.nav-item:hover {
+  background: #f1f5fa;
+  color: #315d91;
+}
+
+.nav-item.active {
+  background: #eaf0f8;
+  color: #244d7a;
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+
+.nav-number {
+  flex: 0 0 22px;
+  color: #9aa7b6;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.nav-item.active .nav-number {
+  color: #b08748;
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.sidebar-bottom {
+  padding: 15px 12px;
+  margin-top: 15px;
+  border-top: 1px solid var(--border);
+  color: #9aa6b5;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* ==============================
+   页面主体区域
+============================== */
+
+.main-area {
+  margin-left: var(--sidebar-width);
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+.workspace {
+  width: 100%;
+  padding: 30px 25px 60px;
+}
+
+.page {
+  display: none;
+  position: relative;
+  width: min(100%, 1000px);
+  min-height: 700px;
+  margin: 0 auto;
+  padding: 58px 76px 65px;
+  background: white;
+  box-shadow: 0 8px 35px rgba(25,45,75,.10);
+  border-radius: 4px;
+  overflow-wrap: break-word;
+}
+
+.page.active {
+  display: block;
+}
+
+.page:not(.cover)::before {
+  content: "CET-6 WRITING COURSE";
+  position: absolute;
+  top: 22px;
+  left: 76px;
+  color: #a0acbb;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.page:not(.cover)::after {
+  content: attr(data-page);
+  position: absolute;
+  right: 76px;
+  bottom: 24px;
+  color: #9aa6b5;
+  font-size: 12px;
+}
+
+/* ==============================
+   封面：只作用于第一页
+============================== */
+
+.cover {
+  min-height: 700px;
+  padding: 0;
+  color: white;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(198,155,82,.22), transparent 30%),
+    linear-gradient(135deg, #14243d 0%, #203e63 65%, #315d91 100%);
+  display: none;
+  overflow: hidden;
+}
+
+.cover.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover-inner {
+  padding: 85px 85px 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.cover-kicker {
+  color: #d8b777;
+  letter-spacing: 4px;
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+.cover h1 {
+  font-size: clamp(34px, 5vw, 53px);
+  line-height: 1.35;
+  margin: 0 0 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.cover-subtitle {
+  font-size: 20px;
+  color: #dce6f2;
+  margin-bottom: 45px;
+}
+
+.cover-line {
+  width: 75px;
+  height: 4px;
+  background: var(--gold);
+  margin: 28px 0;
+}
+
+.cover-description {
+  max-width: 580px;
+  color: #d7e0ec;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.cover-meta {
+  margin-top: 65px;
+  color: #b8c8dc;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.cover-decoration {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -110px;
+  bottom: -150px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+}
+
+.cover-decoration::before,
+.cover-decoration::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+}
+
+.cover-decoration::before {
+  inset: 35px;
+}
+
+.cover-decoration::after {
+  inset: 75px;
+}
+
+/* ==============================
+   标题与正文
+============================== */
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.page h2 {
+  color: var(--navy);
+  font-size: 29px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border);
+}
+
+.page h3 {
+  color: #294f7c;
+  font-size: 19px;
+  margin: 27px 0 10px;
+}
+
+.page h4 {
+  color: #344d6b;
+  font-size: 16px;
+  margin: 18px 0 8px;
+}
+
+.page p {
+  margin: 10px 0;
+}
+
+.lead {
+  font-size: 16px;
+  color: #52657b;
+  margin: 17px 0 25px !important;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.center {
+  text-align: center;
+}
+
+ul, ol {
+  padding-left: 25px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.info-box {
+  padding: 17px 20px;
+  margin: 18px 0;
+  background: #f2f6fb;
+  border-left: 4px solid var(--blue);
+  border-radius: 3px;
+}
+
+.gold-box {
+  padding: 17px 20px;
+  margin: 18px 0;
+  background: #fbf7ef;
+  border-left: 4px solid var(--gold);
+  border-radius: 3px;
+}
+
+.warning-box {
+  padding: 17px 20px;
+  margin: 18px 0;
+  background: #fff5f3;
+  border-left: 4px solid #c87968;
+  border-radius: 3px;
+}
+
+.tag {
+  display: inline-block;
+  background: #eaf0f7;
+  color: #315d91;
+  padding: 3px 9px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin: 3px 4px 3px 0;
+}
+
+.key-point {
+  color: #315d91;
+  font-weight: 700;
+}
+
+/* 表格 */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+
+th {
+  background: #203e63;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+}
+
+th, td {
+  padding: 11px 13px;
+  border: 1px solid #dce3eb;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f7f9fc;
+}
+
+/* 英文范文 */
+
+.english-box {
+  padding: 22px 25px;
+  margin: 18px 0;
+  background: #f6f8fb;
+  border: 1px solid #e1e7ef;
+  border-radius: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.85;
+  color: #28384c;
+}
+
+.english-box p {
+  margin: 0 0 13px;
+}
+
+.translation {
+  padding: 15px 20px;
+  background: #fbf7ef;
+  border-radius: 4px;
+  color: #5c5140;
+  font-size: 14px;
+}
+
+/* 练习 */
+
+.question {
+  padding: 17px 20px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.question-title {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.answer {
+  margin-top: 12px;
+  padding: 12px 15px;
+  background: #f1f6f2;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+details {
+  margin-top: 12px;
+}
+
+summary {
+  cursor: pointer;
+  color: #315d91;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* 页脚 */
+
+.page-footer {
+  margin-top: 45px;
+  padding-top: 13px;
+  border-top: 1px solid #e8edf2;
+  color: #a0aab7;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   编辑模式
+============================== */
+
+.edit-tip {
+  display: none;
+  width: min(100%, 1000px);
+  margin: 0 auto 12px;
+  padding: 10px 16px;
+  background: #fff8e9;
+  color: #765a2b;
+  border: 1px solid #ead8b4;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+body.editing .edit-tip {
+  display: block;
+}
+
+body.editing .page.active {
+  outline: 2px dashed #c69b52;
+  outline-offset: -8px;
+}
+
+body.editing .page.active * {
+  cursor: text;
+}
+
+body.editing .page button,
+body.editing .page input,
+body.editing .page select,
+body.editing .page textarea,
+body.editing .page summary {
+  cursor: pointer;
+}
+
+body.editing .page [contenteditable="false"] {
+  cursor: pointer;
+}
+
+/* ==============================
+   底部翻页
+============================== */
+
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px auto 0;
+}
+
+.bottom-nav button {
+  padding: 10px 24px;
+  background: #203e63;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.bottom-nav button:hover {
+  background: #315d91;
+}
+
+.bottom-nav button:disabled {
+  background: #aab4c1;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   打印
+============================== */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .toolbar,
+  .progress-track,
+  .sidebar,
+  .bottom-nav,
+  .edit-tip {
+    display: none !important;
+  }
+
+  .main-area {
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .workspace {
+    padding: 0;
+  }
+
+  .page,
+  .page.active,
+  .cover,
+  .cover.active {
+    display: block !important;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 35px 45px;
+    box-shadow: none;
+    border-radius: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .cover {
+    min-height: 95vh;
+    display: flex !important;
+    background: #203e63 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cover-inner {
+    padding: 100px 50px;
+  }
+
+  .page:not(.cover)::before,
+  .page:not(.cover)::after {
+    display: none;
+  }
+
+  details > * {
+    display: block !important;
+  }
+}
+
+/* ==============================
+   响应式布局
+============================== */
+
+@media (max-width: 1050px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .page {
+    padding: 55px 48px 60px;
+  }
+
+  .page:not(.cover)::before {
+    left: 48px;
+  }
+
+  .page:not(.cover)::after {
+    right: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .toolbar {
+    padding: 10px 12px;
+    position: relative;
+  }
+
+  .toolbar-title {
+    width: 100%;
+  }
+
+  .toolbar-actions {
+    gap: 5px;
+  }
+
+  .toolbar button {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .progress-track {
+    position: relative;
+    top: auto;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    max-height: 260px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 15px 12px;
+  }
+
+  .sidebar-heading {
+    padding-bottom: 8px;
+  }
+
+  .sidebar-heading h2 {
+    font-size: 15px;
+  }
+
+  .nav-group {
+    margin-bottom: 10px;
+  }
+
+  .nav-group-title {
+    padding: 5px 8px;
+  }
+
+  .nav-item {
+    display: inline-flex;
+    width: auto;
+    margin: 2px;
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-area {
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .workspace {
+    padding: 12px 8px 35px;
+  }
+
+  .page {
+    padding: 48px 25px 55px;
+    min-height: 650px;
+  }
+
+  .page:not(.cover)::before {
+    left: 25px;
+  }
+
+  .page:not(.cover)::after {
+    right: 25px;
+  }
+
+  .cover-inner {
+    padding: 65px 30px;
+  }
+
+  .page h2 {
+    font-size: 24px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==============================
+     顶部工具栏
+============================== -->
+
+<header class="toolbar">
+  <div class="toolbar-title">
+    CET-6 WRITING · 六级写作专题课程
+  </div>
+
+  <div class="toolbar-actions">
+    <button id="editBtn" onclick="toggleEdit()">✎ 编辑模式</button>
+    <button onclick="saveContent()">保存修改</button>
+    <button onclick="resetContent()">恢复原稿</button>
+    <button onclick="window.print()">打印 / PDF</button>
+    <span class="page-status" id="pageStatus">1 / 21</span>
+  </div>
+</header>
+
+<div class="progress-track">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- ==============================
+     左侧完整目录
+============================== -->
+
+<aside class="sidebar">
+
+  <div class="sidebar-heading">
+    <div class="en">COURSE CONTENTS</div>
+    <h2>专题一 · 课程目录</h2>
+    <p>评分标准与基本要求</p>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">课程导入</div>
+
+    <button class="nav-item active" data-page="0" onclick="goToPage(0)">
+      <span class="nav-number">01</span>
+      <span class="nav-text">课程封面</span>
+    </button>
+
+    <button class="nav-item" data-page="1" onclick="goToPage(1)">
+      <span class="nav-number">02</span>
+      <span class="nav-text">为什么要从评分标准开始？</span>
+    </button>
+
+    <button class="nav-item" data-page="2" onclick="goToPage(2)">
+      <span class="nav-number">03</span>
+      <span class="nav-text">六级写作的考试基本要求</span>
+    </button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">PART 01 · 评分标准</div>
+
+    <button class="nav-item" data-page="3" onclick="goToPage(3)">
+      <span class="nav-number">04</span>
+      <span class="nav-text">官方评分标准</span>
+    </button>
+
+    <button class="nav-item" data-page="4" onclick="goToPage(4)">
+      <span class="nav-number">05</span>
+      <span class="nav-text">不同分数档次的差异</span>
+    </button>
+
+    <button class="nav-item" data-page="5" onclick="goToPage(5)">
+      <span class="nav-number">06</span>
+      <span class="nav-text">总体印象评分</span>
+    </button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">PART 02 · 五项基本要求</div>
+
+    <button class="nav-item" data-page="6" onclick="goToPage(6)">
+      <span class="nav-number">07</span>
+      <span class="nav-text">五项基本要求总览</span>
+    </button>
+
+    <button class="nav-item" data-page="7" onclick="goToPage(7)">
+      <span class="nav-number">08</span>
+      <span class="nav-text">内容切题</span>
+    </button>
+
+    <button class="nav-item" data-page="8" onclick="goToPage(8)">
+      <span class="nav-number">09</span>
+      <span class="nav-text">观点明确</span>
+    </button>
+
+    <button class="nav-item" data-page="9" onclick="goToPage(9)">
+      <span class="nav-number">10</span>
+      <span class="nav-text">结构清晰</span>
+    </button>
+
+    <button class="nav-item" data-page="10" onclick="goToPage(10)">
+      <span class="nav-number">11</span>
+      <span class="nav-text">语言准确自然</span>
+    </button>
+
+    <button class="nav-item" data-page="11" onclick="goToPage(11)">
+      <span class="nav-number">12</span>
+      <span class="nav-text">逻辑连贯</span>
+    </button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">PART 03 · 写作能力提升</div>
+
+    <button class="nav-item" data-page="12" onclick="goToPage(12)">
+      <span class="nav-number">13</span>
+      <span class="nav-text">常见失分原因</span>
+    </button>
+
+    <button class="nav-item" data-page="13" onclick="goToPage(13)">
+      <span class="nav-number">14</span>
+      <span class="nav-text">基础表达升级</span>
+    </button>
+
+    <button class="nav-item" data-page="14" onclick="goToPage(14)">
+      <span class="nav-number">15</span>
+      <span class="nav-text">30分钟写作时间管理</span>
+    </button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">PART 04 · 范文与训练</div>
+
+    <button class="nav-item" data-page="15" onclick="goToPage(15)">
+      <span class="nav-number">16</span>
+      <span class="nav-text">完整范文：Lifelong Learning</span>
+    </button>
+
+    <button class="nav-item" data-page="16" onclick="goToPage(16)">
+      <span class="nav-number">17</span>
+      <span class="nav-text">范文逐句拆解</span>
+    </button>
+
+    <button class="nav-item" data-page="17" onclick="goToPage(17)">
+      <span class="nav-number">18</span>
+      <span class="nav-text">课堂练习：判断与分析</span>
+    </button>
+
+    <button class="nav-item" data-page="18" onclick="goToPage(18)">
+      <span class="nav-number">19</span>
+      <span class="nav-text">课堂练习：改错与优化</span>
+    </button>
+
+    <button class="nav-item" data-page="19" onclick="goToPage(19)">
+      <span class="nav-number">20</span>
+      <span class="nav-text">课后训练：审题与立意</span>
+    </button>
+
+    <button class="nav-item" data-page="20" onclick="goToPage(20)">
+      <span class="nav-number">21</span>
+      <span class="nav-text">自查清单与课程总结</span>
+    </button>
+  </div>
+
+  <div class="sidebar-bottom">
+    CET-6 WRITING COURSE<br>
+    MODULE 01 · WRITING FUNDAMENTALS<br>
+    共21页 · 可编辑学习讲义
+  </div>
+
+</aside>
+
+<!-- ==============================
+     右侧讲义主体
+============================== -->
+
+<main class="main-area">
+
+<main class="workspace">
+
+<div class="edit-tip">
+  <strong>当前处于编辑模式。</strong>
+  点击页面中的文字、标题、表格或列表即可修改。修改会自动保存在当前浏览器中。编辑完成后，点击“退出编辑模式”即可正常使用。
+</div>
+
+<!-- 第1页：封面 -->
+
+<section class="page cover active" data-title="课程封面">
+  <div class="cover-decoration"></div>
+
+  <div class="cover-inner">
+    <div class="cover-kicker">COLLEGE ENGLISH TEST · BAND 6</div>
+
+    <h1>大学英语六级<br>写作专题一</h1>
+
+    <div class="cover-subtitle">评分标准与基本要求</div>
+
+    <div class="cover-line"></div>
+
+    <div class="cover-description">
+      从理解评分规则开始，建立清晰、准确、有逻辑的英语写作能力。<br>
+      不只是学会写句子，更要学会组织观点、展开论证和表达思想。
+    </div>
+
+    <div class="cover-meta">
+      CET-6 WRITING COURSE &nbsp; | &nbsp; MODULE 01
+    </div>
+  </div>
+</section>
+
+<!-- 第2页 -->
+
+<section class="page" data-title="课程导入">
+  <div class="eyebrow">MODULE 01 · COURSE INTRODUCTION</div>
+  <h2>一、为什么要从评分标准开始？</h2>
+
+  <p class="lead">
+    写作训练不能只停留在背诵模板和积累高级词汇。真正有效的训练，首先要知道考试究竟在评价什么。
+  </p>
+
+  <h3>1. 常见的六级写作误区</h3>
+  <ul>
+    <li>认为使用越多高级词汇，作文分数就越高。</li>
+    <li>习惯背诵固定模板，遇到陌生题目就不知道如何展开。</li>
+    <li>只关注语法错误，却忽视观点是否切题、段落是否完整。</li>
+    <li>写作时想到哪里写到哪里，缺少清晰的逻辑顺序。</li>
+    <li>为了凑够字数反复表达同一个意思，内容缺乏有效信息。</li>
+  </ul>
+
+  <h3>2. 本专题的核心问题</h3>
+  <div class="info-box">
+    <p><strong>问题一：</strong>六级作文究竟按照什么标准评分？</p>
+    <p><strong>问题二：</strong>一篇合格的六级作文应该具备哪些特征？</p>
+    <p><strong>问题三：</strong>为什么有些作文语法没有明显错误，却仍然得不到高分？</p>
+    <p><strong>问题四：</strong>如何从普通的英语表达逐步提升到准确、自然、有逻辑的表达？</p>
+  </div>
+
+  <h3>3. 学习目标</h3>
+  <p>完成本专题后，你应该能够：</p>
+  <ol>
+    <li>理解六级写作的考试形式和官方评分档次。</li>
+    <li>掌握内容、观点、结构、语言和逻辑五项基本要求。</li>
+    <li>识别常见失分原因，并对基础作文进行修改。</li>
+    <li>建立一套适用于后续所有写作专题的自我检查标准。</li>
+  </ol>
+
+  <div class="gold-box">
+    <strong>本专题的学习原则：</strong>先理解什么是好作文，再学习如何写出好作文。
+  </div>
+</section>
+
+<!-- 第3页 -->
+
+<section class="page" data-title="考试基本信息">
+  <div class="eyebrow">PART 01 · EXAM OVERVIEW</div>
+  <h2>二、六级写作的考试基本要求</h2>
+
+  <p class="lead">在开始写作训练之前，先明确考试的基本形式和时间约束。</p>
+
+  <table>
+    <tr>
+      <th>项目</th>
+      <th>基本要求</th>
+      <th>备考意义</th>
+    </tr>
+    <tr>
+      <td>考试形式</td>
+      <td>短文写作</td>
+      <td>需要围绕给定主题组织完整篇章。</td>
+    </tr>
+    <tr>
+      <td>考试时间</td>
+      <td>30分钟</td>
+      <td>必须兼顾构思、写作和检查。</td>
+    </tr>
+    <tr>
+      <td>字数要求</td>
+      <td>不少于150词</td>
+      <td>要保证内容充分，不能只写简单观点。</td>
+    </tr>
+    <tr>
+      <td>分值比例</td>
+      <td>写作占总分的15%</td>
+      <td>写作是六级综合能力评价的重要组成部分。</td>
+    </tr>
+    <tr>
+      <td>报道分</td>
+      <td>满分106.5分</td>
+      <td>写作分数会按考试计分规则转换为报道分。</td>
+    </tr>
+  </table>
+
+  <h3>关于字数：150词与160—190词</h3>
+  <div class="info-box">
+    <p><strong>官方基本要求：</strong>不少于150词。</p>
+    <p><strong>备考建议：</strong>可以将160—190词作为日常训练的参考范围，给观点解释和论证留出空间。</p>
+    <p>需要注意，160—190词是学习训练中的建议，不是官方规定的固定字数区间。</p>
+  </div>
+
+  <h3>为什么不能把30分钟全部用于写作？</h3>
+  <p>如果没有提前构思，考生很容易在写作中途出现观点重复、逻辑断裂和表达混乱等问题。</p>
+  <p>因此，写作时间必须包含审题、构思、落笔和检查四个环节。</p>
+
+  <div class="gold-box">
+    <strong>核心认识：</strong>六级写作考查的不只是英语句子，更是考生使用英语完成一项书面表达任务的能力。
+  </div>
+</section>
+
+<!-- 第4页 -->
+
+<section class="page" data-title="官方评分标准">
+  <div class="eyebrow">PART 02 · OFFICIAL SCORING</div>
+  <h2>三、六级写作的官方评分标准</h2>
+
+  <p class="lead">理解评分标准，是建立正确写作训练方向的第一步。</p>
+
+  <h3>1. 评分方式</h3>
+  <p>
+    全国大学英语四、六级考试写作采用总体印象评分方式。评分者根据作文整体表现，对作文的思想内容、语言运用和组织表达等方面进行综合判断。
+  </p>
+
+  <div class="info-box">
+    <strong>总体印象评分意味着什么？</strong>
+    <p>作文不是简单地按照语法错误数量逐项扣分，也不是高级词汇越多分数就越高。</p>
+    <p>评分者会综合考察作文是否完成任务、内容是否充分、表达是否清楚以及整体语言质量。</p>
+  </div>
+
+  <h3>2. 官方评分档次</h3>
+  <table>
+    <tr>
+      <th>档次</th>
+      <th>原始分数</th>
+      <th>整体评价</th>
+    </tr>
+    <tr>
+      <td>五档</td>
+      <td>13—15分</td>
+      <td>思想表达清楚，内容充实，语言较好，组织连贯。</td>
+    </tr>
+    <tr>
+      <td>四档</td>
+      <td>10—12分</td>
+      <td>基本完成写作任务，内容较完整，语言和组织总体较好。</td>
+    </tr>
+    <tr>
+      <td>三档</td>
+      <td>7—9分</td>
+      <td>基本切题，但内容、语言或组织方面存在一定问题。</td>
+    </tr>
+    <tr>
+      <td>二档</td>
+      <td>4—6分</td>
+      <td>表达存在较明显问题，内容不够充分，语言错误较多。</td>
+    </tr>
+    <tr>
+      <td>一档</td>
+      <td>1—3分</td>
+      <td>未能有效完成写作任务，内容和语言表达存在严重问题。</td>
+    </tr>
+  </table>
+
+  <p class="small">
+    说明：以上为六级写作官方评分档次的基本整理。具体评分以考试当年适用的官方考试大纲和评分要求为准。
+  </p>
+
+  <h3>3. 评分时应当关注什么？</h3>
+  <ul>
+    <li>作文是否回应了题目要求。</li>
+    <li>观点是否明确，内容是否有一定深度。</li>
+    <li>段落安排是否合理，文章是否具有完整结构。</li>
+    <li>词汇和语法是否准确，表达是否自然。</li>
+    <li>句子之间、段落之间是否具有合理的逻辑关系。</li>
+  </ul>
+</section>
+
+<!-- 第5页 -->
+
+<section class="page" data-title="不同分数档次的差异">
+  <div class="eyebrow">PART 02 · SCORE ANALYSIS</div>
+  <h2>四、不同分数档次的作文有什么区别？</h2>
+
+  <p class="lead">理解评分档次，不能只记住分数区间，更重要的是理解不同档次背后的写作能力差异。</p>
+
+  <h3>1. 高分作文的典型特征</h3>
+  <ul>
+    <li>能够准确理解题目，并围绕主题展开。</li>
+    <li>中心观点明确，主体段有充分的解释和论证。</li>
+    <li>段落之间衔接自然，文章整体结构清楚。</li>
+    <li>语言表达准确，句式有一定变化。</li>
+    <li>能够使用恰当的词汇表达较复杂的思想。</li>
+  </ul>
+
+  <h3>2. 中等作文的典型特征</h3>
+  <ul>
+    <li>基本回应了题目要求，但观点展开不够充分。</li>
+    <li>结构基本完整，但主体段内容比较单薄。</li>
+    <li>使用了一些连接词，但逻辑关系不够自然。</li>
+    <li>能够表达基本意思，但词汇和句式变化有限。</li>
+  </ul>
+
+  <h3>3. 低分作文的典型特征</h3>
+  <ul>
+    <li>偏离题目要求，或者只谈论相关话题而没有回应具体任务。</li>
+    <li>观点模糊，内容重复，缺乏有效论证。</li>
+    <li>句子之间缺乏逻辑关系。</li>
+    <li>存在较多影响理解的语法、拼写和用词错误。</li>
+    <li>篇章结构不完整，表达缺乏连贯性。</li>
+  </ul>
+
+  <div class="gold-box">
+    <strong>重要结论：</strong>
+    高分作文并不意味着每个句子都非常复杂。清楚地表达一个有价值的观点，通常比堆砌复杂词汇更重要。
+  </div>
+
+  <h3>4. 从中等作文到高分作文，需要提升什么？</h3>
+  <table>
+    <tr>
+      <th>原有表现</th>
+      <th>提升方向</th>
+    </tr>
+    <tr>
+      <td>只表达观点</td>
+      <td>解释观点为什么成立。</td>
+    </tr>
+    <tr>
+      <td>只列举现象</td>
+      <td>分析现象背后的原因和影响。</td>
+    </tr>
+    <tr>
+      <td>句子简单重复</td>
+      <td>丰富句式，但保证准确自然。</td>
+    </tr>
+    <tr>
+      <td>使用固定连接词</td>
+      <td>建立真正的逻辑关系。</td>
+    </tr>
+    <tr>
+      <td>只关注语法</td>
+      <td>同时关注内容、结构和论证。</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 第6页 -->
+
+<section class="page" data-title="总体印象评分">
+  <div class="eyebrow">PART 02 · HOLISTIC SCORING</div>
+  <h2>五、为什么总体印象比单纯的语法检查更重要？</h2>
+
+  <p class="lead">
+    一篇作文的质量来自多个因素共同作用。语法正确是基础，但并不等于作文质量高。
+  </p>
+
+  <h3>案例一：语法基本正确，但内容单薄</h3>
+
+  <div class="english-box">
+    <p>Learning is important in our life. We should learn every day. Learning can help us improve ourselves. Students should study hard. In the future, learning will be useful.</p>
+  </div>
+
+  <p>这段文字的基本语法没有太大问题，但存在明显不足：</p>
+  <ul>
+    <li>核心观点重复，几乎没有新的信息。</li>
+    <li>没有解释学习为什么重要。</li>
+    <li>缺少具体的论证和例子。</li>
+    <li>句子之间只是简单并列，缺少递进关系。</li>
+  </ul>
+
+  <h3>案例二：内容更充分，逻辑更加清楚</h3>
+
+  <div class="english-box">
+    <p>Learning plays an essential role in personal development because it enables individuals to adapt to a rapidly changing world. For example, employees who continuously update their professional knowledge are more likely to respond effectively to new challenges. Therefore, lifelong learning is not merely an academic pursuit but a practical necessity in modern society.</p>
+  </div>
+
+  <p>改进后的表达增加了：</p>
+  <ul>
+    <li>明确的中心观点：学习有助于个人发展。</li>
+    <li>具体的解释：帮助人们适应快速变化的世界。</li>
+    <li>恰当的例子：员工更新专业知识。</li>
+    <li>合理的总结：终身学习具有现实必要性。</li>
+  </ul>
+
+  <div class="info-box">
+    <strong>对比结论：</strong>
+    第二段并不是简单地使用了更多高级词汇，而是让每个句子承担了不同的表达任务，形成了完整的论证过程。
+  </div>
+</section>
+
+<!-- 第7页 -->
+
+<section class="page" data-title="五项基本要求总览">
+  <div class="eyebrow">PART 03 · FIVE CORE REQUIREMENTS</div>
+  <h2>六、六级作文的五项基本要求</h2>
+
+  <p class="lead">无论题目形式如何变化，一篇质量较好的六级作文通常都需要满足以下五项要求。</p>
+
+  <table>
+    <tr>
+      <th>基本要求</th>
+      <th>核心问题</th>
+      <th>写作任务</th>
+    </tr>
+    <tr>
+      <td>内容切题</td>
+      <td>有没有回答题目？</td>
+      <td>准确理解题目，围绕主题展开。</td>
+    </tr>
+    <tr>
+      <td>观点明确</td>
+      <td>到底想表达什么？</td>
+      <td>提出清楚、具体、有方向的观点。</td>
+    </tr>
+    <tr>
+      <td>结构清晰</td>
+      <td>文章如何组织？</td>
+      <td>合理安排开头、主体和结尾。</td>
+    </tr>
+    <tr>
+      <td>语言准确自然</td>
+      <td>表达是否正确？</td>
+      <td>准确使用词汇、语法和句式。</td>
+    </tr>
+    <tr>
+      <td>逻辑连贯</td>
+      <td>观点之间有什么关系？</td>
+      <td>建立清楚的句间和段间联系。</td>
+    </tr>
+  </table>
+
+  <h3>五项要求之间的关系</h3>
+  <div class="info-box">
+    <p><strong>内容切题</strong>决定文章有没有回答正确的问题。</p>
+    <p><strong>观点明确</strong>决定文章有没有清楚的表达中心。</p>
+    <p><strong>结构清晰</strong>决定文章是否有合理的组织方式。</p>
+    <p><strong>语言准确自然</strong>决定思想能否被正确表达。</p>
+    <p><strong>逻辑连贯</strong>决定文章能否形成一个完整的整体。</p>
+  </div>
+
+  <p>
+    这五项要求并不是彼此孤立的。例如，观点不明确会影响内容展开；结构混乱会影响逻辑连贯；语言错误则可能影响观点的准确传达。
+  </p>
+
+  <div class="gold-box">
+    后续专题将分别训练审题、观点生成、段落论证、语言表达和篇章衔接。它们最终都服务于这五项基本要求。
+  </div>
+</section>
+
+<!-- 第8页 -->
+
+<section class="page" data-title="内容切题">
+  <div class="eyebrow">CORE REQUIREMENT 01</div>
+  <h2>七、内容切题：准确回应题目要求</h2>
+
+  <p class="lead">切题是作文的基础。即使语言表达不错，如果没有回答题目要求，也难以取得理想成绩。</p>
+
+  <h3>1. 什么是切题？</h3>
+  <p>切题不是简单地重复题目中的关键词，而是准确理解题目要求，并围绕题目指定的任务展开论述。</p>
+
+  <h3>2. 题目中的关键词可能决定写作方向</h3>
+  <table>
+    <tr>
+      <th>题目要求</th>
+      <th>需要完成的任务</th>
+      <th>容易出现的问题</th>
+    </tr>
+    <tr>
+      <td>Discuss the importance of...</td>
+      <td>讨论某事物的重要性。</td>
+      <td>只描述现象，没有解释重要性。</td>
+    </tr>
+    <tr>
+      <td>Explain the reasons for...</td>
+      <td>分析某种现象产生的原因。</td>
+      <td>只表达态度，没有分析原因。</td>
+    </tr>
+    <tr>
+      <td>Do you agree or disagree?</td>
+      <td>明确表达赞成或反对，并提供理由。</td>
+      <td>全文没有清晰立场。</td>
+    </tr>
+    <tr>
+      <td>How can we...</td>
+      <td>提出具体可行的方法。</td>
+      <td>只讨论问题，不提出解决办法。</td>
+    </tr>
+  </table>
+
+  <h3>3. 例子：看似相关，但没有真正切题</h3>
+  <div class="gold-box">
+    <strong>题目：</strong>Discuss the importance of developing critical thinking skills among university students.
+  </div>
+
+  <p><strong>偏题式写法：</strong></p>
+  <div class="english-box">
+    <p>University students should study hard. They need to attend classes and finish their homework. College life is important for young people.</p>
+  </div>
+
+  <p>问题：文章讨论的是大学生学习和大学生活，并没有真正解释批判性思维的重要性。</p>
+
+  <p><strong>切题式写法：</strong></p>
+  <div class="english-box">
+    <p>Developing critical thinking skills is essential for university students because it enables them to evaluate information independently, question assumptions and make well-informed decisions.</p>
+  </div>
+
+  <p>这段文字直接回应了题目中的 importance，并解释了批判性思维的具体价值。</p>
+
+  <h3>4. 写作前的三个检查问题</h3>
+  <ol>
+    <li>题目要求我讨论什么主题？</li>
+    <li>题目要求我完成什么具体任务？</li>
+    <li>我的每个主体段是否都在服务于这个任务？</li>
+  </ol>
+
+  <div class="info-box">
+    <strong>记忆要点：</strong>相关不等于切题。真正切题，必须回应题目的具体要求。
+  </div>
+</section>
+
+<!-- 第9页 -->
+
+<section class="page" data-title="观点明确">
+  <div class="eyebrow">CORE REQUIREMENT 02</div>
+  <h2>八、观点明确：让读者知道你想表达什么</h2>
+
+  <p class="lead">一篇作文可以讨论多个方面，但必须有清楚的中心思想。</p>
+
+  <h3>1. 什么是明确的观点？</h3>
+  <p>观点明确意味着读者能够理解作者对主题的主要判断、立场或主张。</p>
+
+  <h3>2. 模糊观点与明确观点的对比</h3>
+
+  <table>
+    <tr>
+      <th>模糊表达</th>
+      <th>明确表达</th>
+    </tr>
+    <tr>
+      <td>Technology is important.</td>
+      <td>Technology has transformed the way people communicate and access information.</td>
+    </tr>
+    <tr>
+      <td>Exercise is good.</td>
+      <td>Regular exercise improves physical health and helps people manage stress.</td>
+    </tr>
+    <tr>
+      <td>Reading is useful.</td>
+      <td>Reading broadens people's perspectives and strengthens their ability to think independently.</td>
+    </tr>
+  </table>
+
+  <h3>3. 观点为什么不能太空泛？</h3>
+  <p>例如，Technology is important 只表达了一个非常宽泛的判断。读者无法知道作者究竟想讨论技术的哪些价值。</p>
+  <p>如果改成 Technology has transformed the way people communicate and access information，观点就更加具体，也更容易展开论证。</p>
+
+  <h3>4. 如何让观点更有内容？</h3>
+  <div class="info-box">
+    <p><strong>宽泛主题：</strong>Education is important.</p>
+    <p><strong>具体观点：</strong>Education equips individuals with the knowledge and skills needed to participate effectively in modern society.</p>
+    <p><strong>进一步展开：</strong>Beyond academic knowledge, education also encourages independent thinking, problem-solving and social responsibility.</p>
+  </div>
+
+  <h3>5. 观点表达的常用句式</h3>
+  <div class="english-box">
+    <p>It is widely recognized that...</p>
+    <p>There is no denying that...</p>
+    <p>In my view, ...</p>
+    <p>I firmly believe that...</p>
+    <p>One of the major reasons why ... is that...</p>
+  </div>
+
+  <p class="small">注意：这些句式只是表达工具，不应机械地套用。真正重要的是后面表达的观点是否具体、合理。</p>
+
+  <div class="gold-box">
+    <strong>记忆要点：</strong>不要只告诉读者某件事很重要，还要说明它为什么重要、具体体现在哪里。
+  </div>
+</section>
+
+<!-- 第10页 -->
+
+<section class="page" data-title="结构清晰">
+  <div class="eyebrow">CORE REQUIREMENT 03</div>
+  <h2>九、结构清晰：让文章具有完整的组织</h2>
+
+  <p class="lead">结构的作用，是帮助读者按照合理的顺序理解作者的思想。</p>
+
+  <h3>1. 三段式结构</h3>
+  <p>三段式结构是六级写作中常见、实用的组织方式。</p>
+
+  <table>
+    <tr>
+      <th>段落</th>
+      <th>主要任务</th>
+      <th>写作内容</th>
+    </tr>
+    <tr>
+      <td>第一段：Introduction</td>
+      <td>引出主题</td>
+      <td>介绍背景，提出中心观点。</td>
+    </tr>
+    <tr>
+      <td>第二段：Body</td>
+      <td>展开论证</td>
+      <td>解释原因、分析影响、举例或提出论据。</td>
+    </tr>
+    <tr>
+      <td>第三段：Conclusion</td>
+      <td>总结全文</td>
+      <td>重申观点，提出建议或展望。</td>
+    </tr>
+  </table>
+
+  <h3>2. 结构示意</h3>
+  <div class="info-box center">
+    <p><strong>第一段：提出主题和中心观点</strong></p>
+    <p>↓</p>
+    <p><strong>第二段：解释观点、展开论证</strong></p>
+    <p>↓</p>
+    <p><strong>第三段：总结观点、深化主题</strong></p>
+  </div>
+
+  <h3>3. 结构完整不等于机械套用三段式</h3>
+  <p>三段式只是常见的组织方法，并不是所有题目都必须严格采用相同的段落安排。</p>
+  <p>例如，某些题目要求分析多个原因，主体部分可以分成两个段落；某些题目要求提出解决办法，也可以围绕不同措施分别展开。</p>
+
+  <h3>4. 常见结构问题</h3>
+  <ul>
+    <li>开头过长，真正的观点迟迟没有出现。</li>
+    <li>主体段缺少中心句，读者不知道段落重点。</li>
+    <li>结尾突然出现新观点，前文没有铺垫。</li>
+    <li>每段都在重复同一个意思，没有层次变化。</li>
+  </ul>
+
+  <div class="gold-box">
+    <strong>记忆要点：</strong>结构不是为了让文章看起来整齐，而是为了让思想按照合理顺序展开。
+  </div>
+</section>
+
+<!-- 第11页 -->
+
+<section class="page" data-title="语言准确自然">
+  <div class="eyebrow">CORE REQUIREMENT 04</div>
+  <h2>十、语言准确自然：不仅要会表达，还要表达正确</h2>
+
+  <p class="lead">词汇和语法是写作的基础，但语言质量还包括搭配、语气、句式和自然程度。</p>
+
+  <h3>1. 词汇准确比盲目追求高级更重要</h3>
+  <table>
+    <tr>
+      <th>不够自然的表达</th>
+      <th>更准确的表达</th>
+    </tr>
+    <tr>
+      <td>learn knowledge</td>
+      <td>acquire knowledge</td>
+    </tr>
+    <tr>
+      <td>do a decision</td>
+      <td>make a decision</td>
+    </tr>
+    <tr>
+      <td>increase the ability</td>
+      <td>improve / enhance one's ability</td>
+    </tr>
+    <tr>
+      <td>big pressure</td>
+      <td>great pressure / considerable pressure</td>
+    </tr>
+    <tr>
+      <td>make people convenient</td>
+      <td>make life more convenient</td>
+    </tr>
+  </table>
+
+  <h3>2. 注意基本语法准确性</h3>
+  <table>
+    <tr>
+      <th>错误类型</th>
+      <th>错误表达</th>
+      <th>正确表达</th>
+    </tr>
+    <tr>
+      <td>主谓一致</td>
+      <td>Technology have...</td>
+      <td>Technology has...</td>
+    </tr>
+    <tr>
+      <td>名词单复数</td>
+      <td>many information</td>
+      <td>much information</td>
+    </tr>
+    <tr>
+      <td>动词形式</td>
+      <td>People should to learn.</td>
+      <td>People should learn.</td>
+    </tr>
+    <tr>
+      <td>冠词</td>
+      <td>play important role</td>
+      <td>play an important role</td>
+    </tr>
+    <tr>
+      <td>介词搭配</td>
+      <td>depend of</td>
+      <td>depend on</td>
+    </tr>
+  </table>
+
+  <h3>3. 句式要有变化，但不要为了复杂而复杂</h3>
+
+  <p><strong>基础表达：</strong></p>
+  <div class="english-box">
+    <p>Online learning is convenient. It saves time. It provides more learning resources.</p>
+  </div>
+
+  <p><strong>优化表达：</strong></p>
+  <div class="english-box">
+    <p>By saving commuting time and providing access to a wider range of learning resources, online learning offers students greater flexibility.</p>
+  </div>
+
+  <p>优化后的句子将多个相关信息整合起来，表达更加紧凑，也更有层次。</p>
+
+  <h3>4. 语言升级的原则</h3>
+  <ul>
+    <li>先保证语法正确，再考虑句式变化。</li>
+    <li>优先掌握常见、准确的词汇搭配。</li>
+    <li>避免为了显得高级而使用不熟悉的词汇。</li>
+    <li>让句式变化服务于内容，而不是喧宾夺主。</li>
+  </ul>
+
+  <div class="gold-box">
+    <strong>记忆要点：</strong>高级表达不是生僻词汇的堆积，而是准确、自然、有效地表达复杂思想。
+  </div>
+</section>
+
+<!-- 第12页 -->
+
+<section class="page" data-title="逻辑连贯">
+  <div class="eyebrow">CORE REQUIREMENT 05</div>
+  <h2>十一、逻辑连贯：让句子之间真正产生联系</h2>
+
+  <p class="lead">一篇作文不能只是正确句子的集合，还必须让这些句子形成一个有意义的整体。</p>
+
+  <h3>1. 什么是逻辑连贯？</h3>
+  <p>逻辑连贯是指句子和段落之间具有清楚、合理的思想关系，使读者能够顺利理解文章的论证过程。</p>
+
+  <h3>2. 常见逻辑关系</h3>
+  <table>
+    <tr>
+      <th>逻辑关系</th>
+      <th>常用表达</th>
+      <th>主要作用</th>
+    </tr>
+    <tr>
+      <td>递进</td>
+      <td>Furthermore, Moreover, In addition</td>
+      <td>补充新的观点或信息。</td>
+    </tr>
+    <tr>
+      <td>转折</td>
+      <td>However, Nevertheless, On the other hand</td>
+      <td>引出不同观点或限制条件。</td>
+    </tr>
+    <tr>
+      <td>因果</td>
+      <td>Therefore, Consequently, As a result</td>
+      <td>表达原因与结果。</td>
+    </tr>
+    <tr>
+      <td>举例</td>
+      <td>For example, For instance</td>
+      <td>用具体事例解释观点。</td>
+    </tr>
+    <tr>
+      <td>总结</td>
+      <td>In conclusion, To sum up</td>
+      <td>归纳前文内容。</td>
+    </tr>
+    <tr>
+      <td>让步</td>
+      <td>Although, Even though, Admittedly</td>
+      <td>承认某种情况，再提出自己的判断。</td>
+    </tr>
+  </table>
+
+  <h3>3. 连接词不等于逻辑</h3>
+
+  <p><strong>连接不自然：</strong></p>
+  <div class="english-box">
+    <p>Exercise is important. Furthermore, many people like music. Therefore, students should study hard.</p>
+  </div>
+
+  <p>问题：虽然使用了 Furthermore 和 Therefore，但句子之间并没有形成合理的思想联系。</p>
+
+  <p><strong>逻辑更加合理：</strong></p>
+  <div class="english-box">
+    <p>Regular exercise is essential for students because it improves physical health and reduces stress. Furthermore, physical activity can help students maintain concentration during study. Therefore, universities should encourage students to develop healthy exercise habits.</p>
+  </div>
+
+  <h3>4. 一个实用的逻辑检查方法</h3>
+  <p>写完每句话之后，可以问自己：</p>
+  <ul>
+    <li>这句话是在解释上一句话吗？</li>
+    <li>这句话是在补充一个新理由吗？</li>
+    <li>这句话是在举例证明观点吗？</li>
+    <li>这句话是在说明前面观点的结果吗？</li>
+  </ul>
+
+  <div class="gold-box">
+    <strong>记忆要点：</strong>先想清楚句子之间的关系，再选择连接词。不要为了使用连接词而强行添加连接词。
+  </div>
+</section>
+
+<!-- 第13页 -->
+
+<section class="page" data-title="常见失分原因">
+  <div class="eyebrow">PART 04 · COMMON MISTAKES</div>
+  <h2>十二、六级写作中最常见的失分原因</h2>
+
+  <p class="lead">很多作文的问题并不是不会写，而是写作习惯存在系统性缺陷。</p>
+
+  <h3>1. 内容方面</h3>
+  <ul>
+    <li>没有准确理解题目要求。</li>
+    <li>观点过于宽泛，缺少具体解释。</li>
+    <li>主体段只有观点，没有论据。</li>
+    <li>反复使用相同内容凑字数。</li>
+  </ul>
+
+  <h3>2. 结构方面</h3>
+  <ul>
+    <li>缺少明确的开头或结尾。</li>
+    <li>段落之间缺少自然过渡。</li>
+    <li>主体段内部缺少中心句。</li>
+    <li>文章的论证顺序不合理。</li>
+  </ul>
+
+  <h3>3. 语言方面</h3>
+  <ul>
+    <li>中式英语表达较多。</li>
+    <li>词汇搭配错误。</li>
+    <li>时态、单复数、主谓一致等基础语法错误。</li>
+    <li>盲目使用复杂句，导致句子结构混乱。</li>
+  </ul>
+
+  <h3>4. 逻辑方面</h3>
+  <ul>
+    <li>理由与观点之间缺少解释。</li>
+    <li>例子与主题没有直接关系。</li>
+    <li>因果关系不成立。</li>
+    <li>段落之间出现突然转折。</li>
+  </ul>
+
+  <div class="warning-box">
+    <strong>特别提醒：不要把模板当成写作能力。</strong>
+    <p>背诵模板可以帮助你熟悉常见表达，但如果没有理解题目、组织观点和展开论证的能力，模板本身无法保证作文质量。</p>
+  </div>
+
+  <h3>5. 训练时的优先级</h3>
+  <ol>
+    <li>先解决偏题和内容空泛问题。</li>
+    <li>再解决结构混乱和论证不足问题。</li>
+    <li>然后集中修正高频语法和搭配错误。</li>
+    <li>最后提升词汇丰富度和句式变化。</li>
+  </ol>
+</section>
+
+<!-- 第14页 -->
+
+<section class="page" data-title="基础表达升级">
+  <div class="eyebrow">PART 05 · LANGUAGE IMPROVEMENT</div>
+  <h2>十三、从基础表达走向自然表达</h2>
+
+  <p class="lead">本节不是让你背诵大量高级词汇，而是建立一种表达升级意识。</p>
+
+  <h3>1. 从简单词汇到更准确的表达</h3>
+  <table>
+    <tr>
+      <th>基础表达</th>
+      <th>更自然的表达</th>
+    </tr>
+    <tr>
+      <td>very important</td>
+      <td>essential / crucial / significant</td>
+    </tr>
+    <tr>
+      <td>make better</td>
+      <td>improve / enhance</td>
+    </tr>
+    <tr>
+      <td>help people</td>
+      <td>enable individuals to...</td>
+    </tr>
+    <tr>
+      <td>more and more people</td>
+      <td>an increasing number of people</td>
+    </tr>
+    <tr>
+      <td>have a bad effect on</td>
+      <td>have a negative impact on</td>
+    </tr>
+    <tr>
+      <td>solve problems</td>
+      <td>address issues / tackle challenges</td>
+    </tr>
+    <tr>
+      <td>get information</td>
+      <td>access information</td>
+    </tr>
+    <tr>
+      <td>think about</td>
+      <td>consider / reflect on</td>
+    </tr>
+  </table>
+
+  <h3>2. 从简单句到更丰富的句式</h3>
+
+  <p><strong>基础句：</strong></p>
+  <div class="english-box">
+    <p>Technology changes our lives. It makes communication easier.</p>
+  </div>
+
+  <p><strong>优化一：使用定语从句</strong></p>
+  <div class="english-box">
+    <p>Technology, which has developed rapidly in recent years, has made communication much easier.</p>
+  </div>
+
+  <p><strong>优化二：使用原因状语从句</strong></p>
+  <div class="english-box">
+    <p>As technology continues to advance, people can communicate with one another more easily than ever before.</p>
+  </div>
+
+  <p><strong>优化三：使用非谓语结构</strong></p>
+  <div class="english-box">
+    <p>By making information more accessible, modern technology has fundamentally changed the way people communicate.</p>
+  </div>
+
+  <h3>3. 从重复表达变成有层次的表达</h3>
+  <p>基础表达：</p>
+  <div class="english-box">
+    <p>Reading is useful. Reading helps us learn. Reading helps us think. Reading helps us grow.</p>
+  </div>
+
+  <p>优化表达：</p>
+  <div class="english-box">
+    <p>Reading contributes to personal growth in several ways. It broadens our knowledge, strengthens critical thinking and exposes us to perspectives beyond our immediate experience.</p>
+  </div>
+
+  <div class="gold-box">
+    <strong>语言升级公式：</strong>
+    准确的词汇搭配 + 清晰的句子结构 + 丰富但适度的句式变化。
+  </div>
+</section>
+
+<!-- 第15页 -->
+
+<section class="page" data-title="30分钟写作时间管理">
+  <div class="eyebrow">PART 06 · TIME MANAGEMENT</div>
+  <h2>十四、30分钟如何完成一篇作文？</h2>
+
+  <p class="lead">合理分配时间，可以减少写作中途卡顿和最后来不及检查的问题。</p>
+
+  <h3>建议时间分配</h3>
+  <table>
+    <tr>
+      <th>环节</th>
+      <th>建议时间</th>
+      <th>主要任务</th>
+    </tr>
+    <tr>
+      <td>审题构思</td>
+      <td>4—5分钟</td>
+      <td>理解题目、确定立场、安排段落。</td>
+    </tr>
+    <tr>
+      <td>正式写作</td>
+      <td>20—22分钟</td>
+      <td>完成开头、主体和结尾。</td>
+    </tr>
+    <tr>
+      <td>检查修改</td>
+      <td>3—5分钟</td>
+      <td>检查语法、拼写、搭配和逻辑。</td>
+    </tr>
+  </table>
+
+  <h3>审题构思阶段：必须完成什么？</h3>
+  <div class="info-box">
+    <p><strong>第一步：确定主题。</strong>题目究竟讨论什么？</p>
+    <p><strong>第二步：确定任务。</strong>是讨论重要性、分析原因，还是提出建议？</p>
+    <p><strong>第三步：确定观点。</strong>我最想表达的中心思想是什么？</p>
+    <p><strong>第四步：安排内容。</strong>主体段准备使用哪两个理由或论据？</p>
+  </div>
+
+  <h3>检查阶段：优先检查什么？</h3>
+  <ol>
+    <li>是否遗漏题目要求？</li>
+    <li>是否存在明显的主谓一致错误？</li>
+    <li>名词单复数和动词形式是否正确？</li>
+    <li>是否存在明显的拼写错误？</li>
+    <li>连接词是否使用合理？</li>
+    <li>结尾是否完整？</li>
+  </ol>
+
+  <h3>训练建议</h3>
+  <p>初期训练可以先不限时完成高质量作文，熟悉审题和论证过程；随后逐步缩短时间，最终适应30分钟的考试节奏。</p>
+
+  <div class="gold-box">
+    不要为了追求速度而放弃构思。一个清晰的写作提纲，往往能够节省正式写作阶段的时间。
+  </div>
+</section>
+
+<!-- 第16页 -->
+
+<section class="page" data-title="完整范文：Lifelong Learning">
+  <div class="eyebrow">PART 07 · MODEL ESSAY</div>
+  <h2>十五、完整范文：Lifelong Learning</h2>
+
+  <p class="lead">通过一篇完整作文，观察如何把内容、观点、结构、语言和逻辑结合起来。</p>
+
+  <div class="gold-box">
+    <strong>参考题目：</strong>
+    Directions: For this part, you are allowed 30 minutes to write an essay on the importance of lifelong learning. You should write at least 150 words but no more than 200 words.
+  </div>
+
+  <h3>参考范文</h3>
+
+  <div class="english-box">
+    <p><strong>The Importance of Lifelong Learning</strong></p>
+
+    <p>In an era of rapid technological and social change, the ability to learn continuously has become increasingly important. Lifelong learning, which refers to the ongoing pursuit of knowledge and skills throughout one's life, is no longer simply a personal choice but a necessity.</p>
+
+    <p>There are several reasons why lifelong learning matters. To begin with, it enables individuals to adapt to changes in the workplace. As new technologies reshape industries, people need to update their knowledge and develop new skills in order to remain competitive. Furthermore, continuous learning broadens our perspectives and encourages independent thinking. By exploring different fields of knowledge, we become better equipped to understand complex issues and make informed decisions.</p>
+
+    <p>In conclusion, lifelong learning plays an essential role in both personal development and social progress. Therefore, individuals should cultivate the habit of learning, while educational institutions and employers should provide more opportunities for continuous development.</p>
+  </div>
+
+  <h3>中文理解</h3>
+  <div class="translation">
+    在技术和社会快速变化的时代，持续学习的能力变得越来越重要。终身学习是指一个人在一生中持续追求知识和技能，它不再仅仅是一种个人选择，而是一种必要条件。
+
+    终身学习之所以重要，有几个原因。首先，它使个人能够适应职场变化。随着新技术重塑各个行业，人们需要更新知识并发展新技能，以保持竞争力。此外，持续学习能够拓宽我们的视野，鼓励独立思考。通过探索不同领域的知识，我们能够更好地理解复杂问题，并作出明智的决定。
+
+    总而言之，终身学习对个人发展和社会进步都发挥着重要作用。因此，个人应当培养学习习惯，而教育机构和雇主也应提供更多持续发展的机会。
+  </div>
+
+  <h3>这篇文章的结构</h3>
+  <table>
+    <tr>
+      <th>段落</th>
+      <th>核心内容</th>
+      <th>作用</th>
+    </tr>
+    <tr>
+      <td>第一段</td>
+      <td>时代背景 + 终身学习的定义 + 中心观点</td>
+      <td>引出主题</td>
+    </tr>
+    <tr>
+      <td>第二段</td>
+      <td>适应职场变化 + 拓宽视野和独立思考</td>
+      <td>展开论证</td>
+    </tr>
+    <tr>
+      <td>第三段</td>
+      <td>总结重要性 + 提出行动建议</td>
+      <td>收束全文</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 第17页 -->
+
+<section class="page" data-title="范文逐句拆解">
+  <div class="eyebrow">PART 07 · MODEL ESSAY ANALYSIS</div>
+  <h2>十六、范文逐句拆解：学习表达背后的思维</h2>
+
+  <p class="lead">真正值得学习的不是整篇文章的背诵，而是每句话承担了什么功能，以及作者如何组织思想。</p>
+
+  <h3>第一段：如何自然引出主题？</h3>
+
+  <div class="english-box">
+    <p>In an era of rapid technological and social change, the ability to learn continuously has become increasingly important.</p>
+  </div>
+
+  <p><strong>表达分析：</strong></p>
+  <ul>
+    <li>In an era of...：从时代背景切入。</li>
+    <li>rapid technological and social change：具体说明背景变化。</li>
+    <li>the ability to learn continuously：将主题转化为具体能力。</li>
+    <li>has become increasingly important：提出中心判断。</li>
+  </ul>
+
+  <div class="info-box">
+    这句话没有直接使用 Lifelong learning is important 这样简单的开头，而是先说明时代背景，再自然引出终身学习的必要性。
+  </div>
+
+  <h3>第二段：如何展开观点？</h3>
+
+  <div class="english-box">
+    <p>To begin with, it enables individuals to adapt to changes in the workplace.</p>
+  </div>
+  <p>这句话提出第一个理由：终身学习帮助人们适应职场变化。</p>
+
+  <div class="english-box">
+    <p>As new technologies reshape industries, people need to update their knowledge and develop new skills in order to remain competitive.</p>
+  </div>
+  <p>这句话解释原因：技术变化使知识和技能需要不断更新。</p>
+
+  <div class="english-box">
+    <p>Furthermore, continuous learning broadens our perspectives and encourages independent thinking.</p>
+  </div>
+  <p>这句话提出第二个理由：终身学习能够拓宽视野、促进独立思考。</p>
+
+  <h3>第三段：如何有效收尾？</h3>
+
+  <div class="english-box">
+    <p>Therefore, individuals should cultivate the habit of learning, while educational institutions and employers should provide more opportunities for continuous development.</p>
+  </div>
+
+  <p>这句话不仅重申了终身学习的重要性，还将建议分别落到个人、教育机构和雇主三个主体上。</p>
+
+  <div class="gold-box">
+    <strong>本篇范文的核心思维：</strong>
+    背景变化 → 提出主题 → 说明必要性 → 分析具体价值 → 提出行动建议。
+  </div>
+</section>
+
+<!-- 第18页 -->
+
+<section class="page" data-title="课堂练习：判断与分析">
+  <div class="eyebrow">PART 08 · CLASSROOM PRACTICE</div>
+  <h2>十七、课堂练习一：判断与分析</h2>
+
+  <p class="lead">请根据本专题学习的五项基本要求，判断以下表达存在什么问题。</p>
+
+  <div class="question">
+    <p class="question-title">练习1：以下哪种表达更符合六级作文的要求？</p>
+    <p>A. Technology is good. It is very useful. Many people like it.</p>
+    <p>B. Technology has improved access to information and made communication more efficient.</p>
+    <details>
+      <summary>点击查看参考答案</summary>
+      <div class="answer">
+        参考答案：B。B句表达更加具体，明确说明了技术带来的两方面影响。A句虽然语法简单，但内容空泛且重复。
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习2：以下段落最大的问题是什么？</p>
+    <div class="english-box">
+      <p>Exercise is important for students. Many students like playing games. Online shopping is popular. Students should exercise regularly.</p>
+    </div>
+    <details>
+      <summary>点击查看参考答案</summary>
+      <div class="answer">
+        主要问题是逻辑不连贯。第二、三句与运动对学生的重要性缺少合理联系，段落没有围绕中心观点展开。
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习3：题目要求讨论大学生培养批判性思维的重要性。以下内容是否切题？</p>
+    <p>University students should attend more extracurricular activities because these activities make college life more colorful.</p>
+    <details>
+      <summary>点击查看参考答案</summary>
+      <div class="answer">
+        不够切题。课外活动可能与大学生活有关，但这句话没有说明批判性思维的重要性。需要进一步解释活动如何帮助学生形成独立判断，或者直接围绕批判性思维展开。
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习4：判断以下句子是否存在明显语法问题。</p>
+    <p>People should develops their ability to think independently.</p>
+    <details>
+      <summary>点击查看参考答案</summary>
+      <div class="answer">
+        存在语法错误。情态动词 should 后面应使用动词原形。正确表达：People should develop their ability to think independently.
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习5：下面哪一个连接词更合适？</p>
+    <p>Regular exercise improves physical health. ______, it can reduce stress and improve sleep quality.</p>
+    <p>A. However　 B. Furthermore　 C. Therefore</p>
+    <details>
+      <summary>点击查看参考答案</summary>
+      <div class="answer">
+        参考答案：B. Furthermore。第二句是在第一句基础上补充另一项积极作用，属于递进或补充关系。
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 第19页 -->
+
+<section class="page" data-title="课堂练习：改错与优化">
+  <div class="eyebrow">PART 08 · ERROR CORRECTION</div>
+  <h2>十八、课堂练习二：修改不理想的表达</h2>
+
+  <p class="lead">尝试从语法、词汇搭配、观点具体性和逻辑关系四个方面修改句子。</p>
+
+  <div class="question">
+    <p class="question-title">练习1：词汇搭配错误</p>
+    <div class="english-box">
+      <p>Students should pay attention to improve their English ability.</p>
+    </div>
+    <details>
+      <summary>查看参考修改</summary>
+      <div class="answer">
+        Students should pay attention to improving their English skills.
+        <p>分析：pay attention to 中的 to 是介词，后接名词或动名词；English skills 比 English ability 在此处更自然。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习2：语法错误</p>
+    <div class="english-box">
+      <p>There are many reason why young people should read books.</p>
+    </div>
+    <details>
+      <summary>查看参考修改</summary>
+      <div class="answer">
+        There are many reasons why young people should read books.
+        <p>分析：many 后接可数名词复数，reason 应改为 reasons。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习3：观点过于空泛</p>
+    <div class="english-box">
+      <p>Education is very important to everyone.</p>
+    </div>
+    <details>
+      <summary>查看参考修改</summary>
+      <div class="answer">
+        Education plays a vital role in personal development by equipping individuals with knowledge, practical skills and the ability to think independently.
+        <p>分析：修改后具体说明了教育的重要性体现在哪些方面。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习4：缺乏论证</p>
+    <div class="english-box">
+      <p>Reading is beneficial. It is good for students. Students should read more books.</p>
+    </div>
+    <details>
+      <summary>查看参考修改</summary>
+      <div class="answer">
+        Reading benefits students in several ways. It not only broadens their knowledge but also exposes them to different perspectives, helping them develop independent thinking skills.
+        <p>分析：修改后不仅表达了观点，还解释了阅读的具体价值。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="question">
+    <p class="question-title">练习5：逻辑关系不准确</p>
+    <div class="english-box">
+      <p>Many people use smartphones every day. Therefore, smartphones have become an important part of modern life.</p>
+    </div>
+    <details>
+      <summary>查看参考修改</summary>
+      <div class="answer">
+        Many people use smartphones every day. As a result, smartphones have become an important part of modern life.
+        <p>分析：As a result 更自然地表示前面现象带来的结果。原句的 Therefore 也并非绝对错误，但此处使用 As a result 更贴合语境。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 第20页 -->
+
+<section class="page" data-title="课后训练：审题与立意">
+  <div class="eyebrow">PART 09 · WRITING TASK</div>
+  <h2>十九、课后训练：从题目到写作提纲</h2>
+
+  <p class="lead">本次训练暂时不要求完整写作文，重点是练习审题、确定观点和组织内容。</p>
+
+  <div class="gold-box">
+    <strong>训练题目：</strong>
+    The Importance of Developing Independent Learning Skills among College Students.
+  </div>
+
+  <h3>任务一：理解题目</h3>
+  <p>请回答以下问题：</p>
+  <ol>
+    <li>题目讨论的核心主题是什么？</li>
+    <li>题目要求重点讨论什么？</li>
+    <li>文章应该围绕哪些具体方面展开？</li>
+  </ol>
+
+  <h3>任务二：提出中心观点</h3>
+  <p>尝试用一句完整的英文表达你的中心观点。</p>
+
+  <div class="info-box">
+    <p>参考思路：</p>
+    <p>Independent learning skills are essential for college students because they enable students to take responsibility for their education and adapt to lifelong learning.</p>
+  </div>
+
+  <h3>任务三：设计主体段</h3>
+  <table>
+    <tr>
+      <th>主体段观点</th>
+      <th>可以展开的内容</th>
+    </tr>
+    <tr>
+      <td>提高学习自主性</td>
+      <td>自主制定计划、合理安排时间、主动解决问题。</td>
+    </tr>
+    <tr>
+      <td>适应未来发展</td>
+      <td>快速获取新知识、适应职业变化、持续提升能力。</td>
+    </tr>
+  </table>
+
+  <h3>任务四：写出文章提纲</h3>
+  <div class="info-box">
+    <p><strong>第一段：</strong>介绍大学学习方式的变化，引出自主学习的重要性。</p>
+    <p><strong>第二段：</strong>分析自主学习如何提升学习效率，以及如何帮助学生适应未来发展。</p>
+    <p><strong>第三段：</strong>总结自主学习的价值，并提出培养自主学习能力的建议。</p>
+  </div>
+
+  <h3>拓展任务</h3>
+  <p>在完成提纲后，尝试写出一篇160—190词的完整作文。写完后使用下一页的自查清单进行修改。</p>
+</section>
+
+<!-- 第21页 -->
+
+<section class="page" data-title="写作自查清单与课程总结">
+  <div class="eyebrow">PART 10 · REVIEW & CHECKLIST</div>
+  <h2>二十、写作自查清单与课程总结</h2>
+
+  <p class="lead">完成一篇作文后，不要只检查拼写。请从五项基本要求出发，对文章进行整体评价。</p>
+
+  <h3>1. 五项基本要求自查清单</h3>
+  <table>
+    <tr>
+      <th>检查维度</th>
+      <th>自查问题</th>
+      <th>完成情况</th>
+    </tr>
+    <tr>
+      <td>内容切题</td>
+      <td>是否准确回应题目要求？</td>
+      <td>□ 是　□ 否</td>
+    </tr>
+    <tr>
+      <td>观点明确</td>
+      <td>是否有清晰的中心观点？</td>
+      <td>□ 是　□ 否</td>
+    </tr>
+    <tr>
+      <td>结构清晰</td>
+      <td>是否有合理的段落安排？</td>
+      <td>□ 是　□ 否</td>
+    </tr>
+    <tr>
+      <td>语言准确</td>
+      <td>是否存在明显语法和搭配错误？</td>
+      <td>□ 是　□ 否</td>
+    </tr>
+    <tr>
+      <td>逻辑连贯</td>
+      <td>句子和段落之间是否有合理联系？</td>
+      <td>□ 是　□ 否</td>
+    </tr>
+  </table>
+
+  <h3>2. 30分钟写作最终检查</h3>
+  <ul>
+    <li>是否达到基本字数要求？</li>
+    <li>是否有完整的开头、主体和结尾？</li>
+    <li>主体段是否包含解释或论据？</li>
+    <li>是否存在重复表达和无关内容？</li>
+    <li>是否检查了主谓一致、单复数和动词形式？</li>
+    <li>是否检查了拼写和标点？</li>
+  </ul>
+
+  <h3>3. 本专题核心知识回顾</h3>
+  <div class="info-box">
+    <p><strong>考试基本要求：</strong>30分钟，不少于150词，写作占总分15%。</p>
+    <p><strong>评分方式：</strong>总体印象评分，分为五个档次。</p>
+    <p><strong>五项基本要求：</strong>内容切题、观点明确、结构清晰、语言准确自然、逻辑连贯。</p>
+    <p><strong>写作训练方向：</strong>从正确表达逐步走向清楚、有内容、有逻辑的表达。</p>
+  </div>
+
+  <h3>4. 下一专题预告</h3>
+  <div class="gold-box">
+    <p><strong>专题二：常见作文类型与篇章结构</strong></p>
+    <p>我们将进一步学习六级写作中的常见任务类型，掌握不同题型的结构特点，解决面对不同题目时不知道如何组织文章的问题。</p>
+  </div>
+
+  <div class="page-footer">
+    CET-6 WRITING COURSE · MODULE 01 · END
+  </div>
+</section>
+
+</main>
+
+<!-- 底部翻页 -->
+
+<div class="bottom-nav">
+  <button id="prevBtn" onclick="changePage(-1)">← 上一页</button>
+  <span class="page-status" id="bottomStatus">第 1 页 / 共 21 页</span>
+  <button id="nextBtn" onclick="changePage(1)">下一页 →</button>
+</div>
+
+</main>
+
+<script>
+
+/* ==============================
+   页面翻页功能
+============================== */
+
+const pages = Array.from(document.querySelectorAll(".page"));
+const navItems = Array.from(document.querySelectorAll(".nav-item"));
+
+const totalPages = pages.length;
+
+let currentPage = 0;
+let editing = false;
+
+const pageStatus = document.getElementById("pageStatus");
+const bottomStatus = document.getElementById("bottomStatus");
+const progressBar = document.getElementById("progressBar");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+/* 显示指定页面 */
+
+function showPage(index) {
+  if (index < 0 || index >= totalPages) return;
+
+  currentPage = index;
+
+  pages.forEach((page, i) => {
+    page.classList.toggle("active", i === currentPage);
+  });
+
+  /* 更新左侧目录高亮 */
+
+  navItems.forEach((item, i) => {
+    item.classList.toggle("active", i === currentPage);
+  });
+
+  /* 更新页码 */
+
+  pageStatus.textContent =
+    `${currentPage + 1} / ${totalPages}`;
+
+  bottomStatus.textContent =
+    `第 ${currentPage + 1} 页 / 共 ${totalPages} 页`;
+
+  /* 更新进度条 */
+
+  progressBar.style.width =
+    `${((currentPage + 1) / totalPages) * 100}%`;
+
+  /* 更新翻页按钮 */
+
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = currentPage === totalPages - 1;
+
+  /* 页面切换时回到顶部 */
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
+/* 上一页 / 下一页 */
+
+function changePage(direction) {
+  showPage(currentPage + direction);
+}
+
+/* 点击目录跳转 */
+
+function goToPage(index) {
+  showPage(index);
+}
+
+/* 键盘左右方向键翻页 */
+
+document.addEventListener("keydown", function(event) {
+
+  if (editing) return;
+
+  if (
+    event.target &&
+    (
+      event.target.tagName === "INPUT" ||
+      event.target.tagName === "TEXTAREA"
+    )
+  ) {
+    return;
+  }
+
+  if (event.key === "ArrowRight") {
+    changePage(1);
+  }
+
+  if (event.key === "ArrowLeft") {
+    changePage(-1);
+  }
+
+});
+
+/* ==============================
+   编辑模式
+============================== */
+
+function toggleEdit() {
+
+  editing = !editing;
+
+  document.body.classList.toggle("editing", editing);
+
+  pages.forEach(page => {
+
+    page.contentEditable = editing ? "true" : "false";
+
+    /* 避免编辑模式影响交互控件 */
+
+    page.querySelectorAll(
+      "button, input, select, textarea, summary"
+    ).forEach(control => {
+      control.contentEditable = "false";
+    });
+
+  });
+
+  const btn = document.getElementById("editBtn");
+
+  btn.classList.toggle("active", editing);
+
+  btn.textContent = editing
+    ? "✓ 退出编辑模式"
+    : "✎ 编辑模式";
+
+  if (!editing) {
+    saveContent(false);
+    alert("已退出编辑模式，修改已自动保存。");
+  }
+
+}
+
+/* ==============================
+   自动保存
+============================== */
+
+const STORAGE_KEY = "cet6_lecture_topic_01_v2";
+
+/* 保存所有页面内容 */
+
+function saveContent(showMessage = true) {
+
+  const content = pages.map(page => page.innerHTML);
+
+  try {
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(content)
+    );
+
+    if (showMessage) {
+      alert("修改已成功保存！下次打开网页仍可继续使用。");
+    }
+
+  } catch (error) {
+
+    alert("保存失败，可能是浏览器存储空间不足。");
+
+  }
+
+}
+
+/* 编辑时自动保存 */
+
+pages.forEach(page => {
+
+  page.addEventListener("input", function() {
+
+    if (editing) {
+      saveContent(false);
+    }
+
+  });
+
+});
+
+/* 加载之前保存的内容 */
+
+function loadSavedContent() {
+
+  try {
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (!saved) return;
+
+    const content = JSON.parse(saved);
+
+    if (
+      !Array.isArray(content) ||
+      content.length !== pages.length
+    ) {
+      return;
+    }
+
+    pages.forEach((page, index) => {
+
+      page.innerHTML = content[index];
+
+    });
+
+  } catch (error) {
+
+    console.warn("读取保存内容失败：", error);
+
+  }
+
+}
+
+/* ==============================
+   恢复原稿
+============================== */
+
+function resetContent() {
+
+  const confirmed = confirm(
+    "确定要恢复原始讲义吗？\n\n" +
+    "恢复后，之前保存的所有修改都会被清除，且无法撤销。"
+  );
+
+  if (!confirmed) return;
+
+  localStorage.removeItem(STORAGE_KEY);
+
+  alert("已清除修改记录，页面将重新加载原始讲义。");
+
+  location.reload();
+
+}
+
+/* ==============================
+   初始化
+============================== */
+
+loadSavedContent();
+
+showPage(0);
+
+</script>
+
+</body>
+</html>

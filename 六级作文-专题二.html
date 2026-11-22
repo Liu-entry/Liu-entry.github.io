@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大学英语六级写作专题二：常见作文类型与篇章结构</title>
+<style>
+:root{
+  --navy:#142b4a;
+  --navy2:#1d3d63;
+  --blue:#356b9e;
+  --light:#edf3f9;
+  --gold:#c9a66b;
+  --text:#26364a;
+  --muted:#718096;
+  --line:#dce4ed;
+  --white:#fff;
+  --bg:#e9eef4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+  line-height:1.8;
+}
+.sidebar{
+  position:fixed;left:0;top:0;bottom:0;width:278px;
+  background:var(--navy);color:#fff;overflow-y:auto;
+  padding:25px 17px 35px;z-index:10;
+}
+.brand{padding:0 12px 22px;border-bottom:1px solid #ffffff25;margin-bottom:20px}
+.brand small{color:#a9c0d8;letter-spacing:2px;font-size:11px}
+.brand h2{font-size:19px;line-height:1.5;margin:9px 0 5px;color:#fff}
+.brand p{font-size:12px;color:#a9bbce;margin:0}
+.nav-group{margin:17px 0}
+.nav-heading{
+  color:#91abc7;font-size:11px;letter-spacing:1.5px;
+  padding:5px 12px;text-transform:uppercase;font-weight:700
+}
+.nav-item{
+  width:100%;border:0;background:transparent;color:#d9e4ef;
+  text-align:left;padding:8px 12px;margin:2px 0;border-radius:7px;
+  cursor:pointer;font-size:13px;line-height:1.5;display:flex;gap:9px;
+  align-items:flex-start;transition:.2s
+}
+.nav-item:hover{background:#ffffff14;color:#fff}
+.nav-item.active{background:#31577f;color:#fff;font-weight:700}
+.nav-num{color:#91abc7;font-size:11px;min-width:20px;padding-top:1px}
+.nav-item.active .nav-num{color:#e5c58e}
+.main{margin-left:278px;min-height:100vh;padding:28px 35px 50px}
+.toolbar{
+  max-width:1060px;margin:0 auto 18px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;flex-wrap:wrap
+}
+.toolbar-left,.toolbar-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tool-btn{
+  border:1px solid var(--line);background:#fff;color:var(--navy);
+  padding:8px 13px;border-radius:7px;cursor:pointer;font-size:12px;
+  font-weight:600
+}
+.tool-btn:hover{background:var(--light)}
+.tool-btn.primary{background:var(--navy2);color:#fff;border-color:var(--navy2)}
+.tool-btn.warn{color:#a05a35}
+.status{font-size:12px;color:var(--muted)}
+.progress-wrap{height:4px;background:#d5dee8;max-width:1060px;margin:0 auto 20px;border-radius:5px;overflow:hidden}
+.progress{height:100%;background:var(--gold);width:0;transition:.25s}
+.deck{max-width:1060px;margin:0 auto}
+.page{
+  display:none;background:#fff;min-height:720px;padding:58px 68px 50px;
+  box-shadow:0 8px 30px #253c5510;border:1px solid #e4eaf0;
+  position:relative
+}
+.page.active{display:block}
+.page:not(.cover)::before{
+  content:"";position:absolute;left:0;top:0;width:5px;height:100%;
+  background:linear-gradient(var(--navy2),#d6b77e)
+}
+.cover{
+  background:linear-gradient(135deg,#122943 0%,#1c4167 62%,#315c7e 100%);
+  color:#fff;min-height:720px;display:none;overflow:hidden
+}
+.cover.active{display:flex;flex-direction:column;justify-content:center}
+.cover:after{
+  content:"02";position:absolute;right:40px;bottom:-85px;
+  font-size:310px;font-weight:800;color:#ffffff09;line-height:1
+}
+.cover .eyebrow{color:#d9bd8b;letter-spacing:4px;font-size:13px}
+.cover h1{font-size:43px;line-height:1.35;max-width:760px;margin:22px 0}
+.cover .subtitle{font-size:19px;color:#d5e1ed;max-width:680px}
+.cover .cover-line{width:75px;height:3px;background:var(--gold);margin:28px 0}
+.cover .cover-meta{margin-top:60px;color:#b5c7d9;font-size:13px;letter-spacing:1px}
+h1,h2,h3,h4{color:var(--navy);line-height:1.4}
+.page h2{font-size:27px;margin:0 0 8px}
+.page h3{font-size:19px;margin:27px 0 10px}
+.page h4{font-size:15px;margin:19px 0 8px}
+.kicker{color:var(--blue);font-size:11px;letter-spacing:2px;font-weight:800;margin-bottom:8px}
+.lead{font-size:16px;color:#52657a;margin:10px 0 25px}
+p{margin:10px 0}
+ul,ol{padding-left:24px}
+li{margin:7px 0}
+hr{border:0;border-top:1px solid var(--line);margin:25px 0}
+.callout{
+  background:#f1f5f9;border-left:4px solid var(--blue);
+  padding:15px 19px;margin:18px 0;border-radius:0 8px 8px 0
+}
+.callout.gold{background:#faf6ee;border-left-color:var(--gold)}
+.callout.red{background:#fbf2f0;border-left-color:#b86c5d}
+.callout strong{color:var(--navy)}
+.tag{
+  display:inline-block;background:#eaf1f8;color:#315b83;
+  padding:3px 9px;border-radius:4px;font-size:11px;margin:3px 4px 3px 0
+}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:16px 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:16px 0}
+.card{
+  border:1px solid var(--line);border-radius:9px;padding:17px 18px;background:#fff
+}
+.card h4{margin:0 0 8px;color:var(--blue)}
+.card p{font-size:13px;color:#536579;margin:5px 0}
+.card .big{font-size:25px;font-weight:800;color:var(--navy)}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px}
+th{background:var(--navy2);color:#fff;text-align:left;font-weight:600}
+th,td{padding:11px 13px;border:1px solid var(--line);vertical-align:top}
+td{background:#fff}
+tr:nth-child(even) td{background:#f7f9fb}
+.en{
+  background:#f7f9fc;border:1px solid #e3eaf1;padding:14px 17px;
+  border-radius:7px;margin:12px 0;color:#263c54;font-family:Georgia,serif;
+  line-height:1.85
+}
+.cn{color:#718096;font-size:13px;margin-top:6px}
+.structure{
+  border:1px solid var(--line);border-radius:8px;padding:15px 18px;margin:12px 0
+}
+.structure .step{display:flex;gap:13px;align-items:flex-start;padding:8px 0}
+.step-no{
+  min-width:27px;height:27px;border-radius:50%;background:var(--navy2);
+  color:#fff;text-align:center;line-height:27px;font-size:12px;font-weight:700
+}
+.step-content{flex:1}
+.step-content b{color:var(--navy)}
+.exercise{
+  background:#f8fafc;border:1px solid #dce5ee;border-radius:9px;
+  padding:18px 20px;margin:17px 0
+}
+.exercise-title{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:1px}
+.answer{display:none;background:#f1f6f2;border-left:3px solid #6b9a7b;padding:12px 15px;margin-top:12px;font-size:13px}
+.answer.show{display:block}
+.reveal{
+  border:1px solid #b8c9da;color:var(--navy2);background:#fff;
+  border-radius:5px;padding:6px 11px;cursor:pointer;font-size:12px;margin-top:8px
+}
+.footer{
+  display:flex;justify-content:space-between;align-items:center;
+  max-width:1060px;margin:17px auto 0;color:#8291a2;font-size:12px
+}
+.page-count{font-variant-numeric:tabular-nums}
+.editing .page{outline:2px dashed #c49d60;outline-offset:-8px}
+.edit-tip{
+  display:none;background:#fff8e9;border:1px solid #ead7ae;color:#765b2e;
+  padding:9px 13px;border-radius:6px;font-size:12px;margin:0 auto 15px;max-width:1060px
+}
+.editing .edit-tip{display:block}
+@media(max-width:900px){
+  .sidebar{width:225px;padding:18px 12px}
+  .main{margin-left:225px;padding:20px 16px}
+  .page{padding:42px 35px}
+  .grid3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .sidebar{width:175px;padding:14px 8px}
+  .brand h2{font-size:15px}
+  .nav-item{font-size:11px;padding:7px 6px}
+  .main{margin-left:175px;padding:12px 8px}
+  .page{padding:30px 21px;min-height:650px}
+  .page h2{font-size:22px}
+  .cover h1{font-size:29px}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .toolbar{gap:6px}
+  .tool-btn{padding:7px 9px;font-size:11px}
+}
+@media print{
+  body{background:#fff}
+  .sidebar,.toolbar,.progress-wrap,.footer,.edit-tip{display:none!important}
+  .main{margin:0;padding:0}
+  .deck{max-width:none}
+  .page,.page.active{
+    display:block!important;min-height:0;box-shadow:none;border:0;
+    page-break-after:always;padding:20mm 18mm
+  }
+  .page:last-child{page-break-after:auto}
+  .cover{background:#183653!important;color:#fff!important;print-color-adjust:exact}
+  .cover h1,.cover p,.cover .eyebrow{color:#fff!important}
+  .answer{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="brand">
+    <small>COLLEGE ENGLISH · CET-6</small>
+    <h2>六级写作系统课程</h2>
+    <p>专题二 · 常见作文类型与篇章结构</p>
+  </div>
+  <div id="toc"></div>
+</aside>
+
+<main class="main">
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <button class="tool-btn primary" id="editBtn" onclick="toggleEdit()">✎ 编辑模式</button>
+      <button class="tool-btn" onclick="savePages()">保存修改</button>
+      <button class="tool-btn warn" onclick="restorePages()">恢复原稿</button>
+    </div>
+    <div class="toolbar-right">
+      <span class="status" id="status">阅读模式</span>
+      <button class="tool-btn" onclick="window.print()">打印 / PDF</button>
+    </div>
+  </div>
+  <div class="edit-tip">当前为编辑模式：可以直接点击正文进行修改。完成后点击“保存修改”，本机浏览器将保存你的版本。</div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+
+  <div class="deck" id="deck">
+
+    <!-- 01 封面 -->
+    <section class="page cover active" data-title="课程封面" data-group="课程导入">
+      <div class="eyebrow">CET-6 WRITING · TOPIC 02</div>
+      <h1>常见作文类型<br>与篇章结构</h1>
+      <div class="cover-line"></div>
+      <p class="subtitle">从识别题目要求，到选择合适结构，再到组织完整文章。建立真正能够迁移到不同题目的写作框架。</p>
+      <div class="cover-meta">大学英语六级写作系统课程 · 专题二</div>
+    </section>
+
+    <!-- 02 -->
+    <section class="page" data-title="本专题学习地图" data-group="课程导入">
+      <div class="kicker">COURSE OVERVIEW</div>
+      <h2>本专题学习地图</h2>
+      <p class="lead">写作不是看到题目就开始写句子，而是先判断任务，再决定结构，最后填充内容。</p>
+      <div class="grid3">
+        <div class="card"><div class="big">01</div><h4>识别题型</h4><p>看懂题目究竟要求你解释、评价、比较，还是提出建议。</p></div>
+        <div class="card"><div class="big">02</div><h4>选择结构</h4><p>根据题目任务，决定采用什么样的段落组织方式。</p></div>
+        <div class="card"><div class="big">03</div><h4>完成表达</h4><p>将中心观点、理由、例子和结论组织成一篇完整文章。</p></div>
+      </div>
+      <h3>本专题的核心问题</h3>
+      <ol>
+        <li>六级作文有哪些常见的任务类型？</li>
+        <li>不同类型的题目，应该怎样安排开头、主体和结尾？</li>
+        <li>为什么不能看到某个关键词，就机械套用某一种模板？</li>
+        <li>遇到综合型题目时，怎样判断主要任务并合理组织文章？</li>
+      </ol>
+      <div class="callout gold"><strong>本专题的学习目标：</strong>读完题目后，能够在两分钟内判断题目任务、确定中心立场，并画出三段式文章的基本结构。</div>
+      <h3>建议课时安排</h3>
+      <table>
+        <tr><th>学习模块</th><th>主要内容</th><th>建议时间</th></tr>
+        <tr><td>题型识别</td><td>常见任务类型与题干信号</td><td>20分钟</td></tr>
+        <tr><td>结构学习</td><td>三段式结构及不同类型的展开方法</td><td>35分钟</td></tr>
+        <tr><td>案例分析</td><td>题目拆解与范文结构分析</td><td>25分钟</td></tr>
+        <tr><td>课堂训练</td><td>判断题型、列提纲、结构改写</td><td>20分钟</td></tr>
+      </table>
+    </section>
+
+    <!-- 03 -->
+    <section class="page" data-title="第一部分：先理解作文任务" data-group="一、题型识别">
+      <div class="kicker">PART 01 · UNDERSTANDING THE TASK</div>
+      <h2>第一部分：先理解作文任务</h2>
+      <p class="lead">题型判断不是给作文贴标签，而是弄清楚题目希望你完成什么写作任务。</p>
+      <h3>1. 题目类型与写作任务不是一回事</h3>
+      <p>在学习英语写作时，我们经常听到观点类作文、现象类作文、问题解决类作文、比较类作文等说法。这些分类有助于学习，但它们并不是六级考试官方公布的一套固定题型目录。</p>
+      <p>更重要的是，六级写作题目往往会综合多个任务。例如，一道题目可能要求考生介绍一种社会现象、分析其原因，并提出自己的看法。它既涉及现象描述，也涉及原因分析和观点表达。</p>
+      <div class="callout"><strong>因此，我们采用任务导向的分类方法：</strong>先看题目要求你做什么，再决定采用哪一种篇章结构。</div>
+      <h3>2. 阅读题目时，重点寻找三类信息</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>写作对象：What are you writing about?</b><br>题目讨论的是什么人、什么事、什么现象或什么问题？</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>写作任务：What are you expected to do?</b><br>介绍、解释、分析、评价、比较，还是提出建议？</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>写作立场：What is your position?</b><br>题目是否要求你表达个人观点？是否需要支持或反对某种做法？</div></div>
+      </div>
+      <h3>3. 题干中的常见任务动词</h3>
+      <table>
+        <tr><th>英文表达</th><th>基本含义</th><th>写作中需要完成的任务</th></tr>
+        <tr><td>discuss</td><td>讨论</td><td>围绕主题展开分析，必要时表达立场</td></tr>
+        <tr><td>explain</td><td>解释</td><td>说明原因、过程或背后的逻辑</td></tr>
+        <tr><td>analyze</td><td>分析</td><td>拆解现象、原因、影响或关系</td></tr>
+        <tr><td>compare</td><td>比较</td><td>呈现不同对象的共同点与差异</td></tr>
+        <tr><td>evaluate</td><td>评价</td><td>依据一定标准判断优劣或价值</td></tr>
+        <tr><td>suggest / propose</td><td>建议</td><td>提出可行的行动或解决方案</td></tr>
+        <tr><td>express your opinion</td><td>表达观点</td><td>明确立场并提供理由支持</td></tr>
+      </table>
+      <div class="callout gold">注意：真实考试题目不一定直接出现这些动词。即使题目只给出一个话题，也需要结合完整指令判断写作任务。</div>
+    </section>
+
+    <!-- 04 -->
+    <section class="page" data-title="六级作文的常见任务类型" data-group="一、题型识别">
+      <div class="kicker">TASK CLASSIFICATION</div>
+      <h2>六级作文的常见任务类型</h2>
+      <p class="lead">以下分类是教学中使用的实用框架，目的是帮助你理解不同题目背后的写作任务，而不是把每道题强行归入唯一类别。</p>
+      <table>
+        <tr><th>类型</th><th>核心任务</th><th>常见写作内容</th><th>典型结构</th></tr>
+        <tr><td>观点表达类</td><td>表达并论证立场</td><td>是否赞成、如何看待某种观点</td><td>提出立场—论证—总结</td></tr>
+        <tr><td>现象分析类</td><td>解释一种现象</td><td>现象表现、原因、影响、评价</td><td>描述现象—分析—评价</td></tr>
+        <tr><td>问题解决类</td><td>分析问题并提出方案</td><td>问题、原因、措施、预期效果</td><td>提出问题—分析—解决</td></tr>
+        <tr><td>比较选择类</td><td>比较不同选项并作出判断</td><td>两种方式、不同选择、利弊</td><td>介绍选项—比较—选择</td></tr>
+        <tr><td>利弊评价类</td><td>分析积极与消极影响</td><td>某种技术、行为或趋势的影响</td><td>引出主题—分析利弊—判断</td></tr>
+        <tr><td>建议倡议类</td><td>提出行动方向</td><td>如何改善、如何培养、如何参与</td><td>说明必要性—提出建议—号召</td></tr>
+        <tr><td>图表或材料类</td><td>解释材料并提炼信息</td><td>数据变化、材料观点、趋势</td><td>描述材料—解释—观点</td></tr>
+      </table>
+      <h3>一个重要提醒：题目可能同时包含多个任务</h3>
+      <p>例如，题目要求讨论人工智能对大学生学习的影响，并说明学生应该如何合理使用人工智能。它至少包含两个任务：</p>
+      <ul>
+        <li>分析人工智能对学习的影响；</li>
+        <li>提出大学生合理使用人工智能的建议。</li>
+      </ul>
+      <p>如果全文只谈人工智能的好处，却没有回答应该如何使用，就属于任务完成不充分。</p>
+      <div class="callout red"><strong>常见误区：</strong>只根据题目中的一个关键词判断类型，却忽略题目后半部分的具体要求。写作前一定要把题目中的任务全部圈出来。</div>
+    </section>
+
+    <!-- 05 -->
+    <section class="page" data-title="第二部分：观点表达类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 01 · OPINION ESSAY</div>
+      <h2>第二部分：观点表达类作文</h2>
+      <p class="lead">观点表达类作文的关键，不是把自己的态度说出来，而是让读者理解你为什么持有这一态度。</p>
+      <h3>1. 题目通常在问什么？</h3>
+      <ul>
+        <li>Do you agree or disagree with this statement?</li>
+        <li>What is your opinion on this issue?</li>
+        <li>Should college students ...?</li>
+        <li>What do you think is the most important factor ...?</li>
+      </ul>
+      <h3>2. 推荐结构：立场—论证—回扣</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：引出话题，明确立场</b><br>简要说明讨论对象，清楚表达自己的观点。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：提供理由，展开论证</b><br>选择两个有说服力的理由，解释其逻辑，并适当补充例子。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：总结观点，强调意义</b><br>回扣中心立场，可以进一步指出行动方向或现实意义。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">Some people believe that college students should spend more time developing practical skills rather than focusing mainly on academic knowledge. What is your opinion?</div>
+      <h3>4. 如何确定中心立场？</h3>
+      <p>这道题并不要求你在实践能力和学术知识之间进行绝对的二选一。你可以提出一个有条件、有层次的观点：</p>
+      <div class="en">I believe that college students should attach greater importance to practical skills while maintaining a solid foundation of academic knowledge.</div>
+      <p class="cn">我认为，大学生应当更加重视实践技能，同时保持扎实的学术知识基础。</p>
+      <p>这样的立场既回应了题目，也为后文提供了两个清晰的论证方向。</p>
+      <h3>5. 主体段可以怎样展开？</h3>
+      <div class="grid2">
+        <div class="card"><h4>理由一：适应现实需求</h4><p>实践技能帮助学生将理论知识转化为解决实际问题的能力。</p></div>
+        <div class="card"><h4>理由二：保持长期竞争力</h4><p>学术基础能够帮助学生理解新知识，并适应未来变化。</p></div>
+      </div>
+      <div class="callout"><strong>写作关键：</strong>不要只写“实践能力很重要，因为它很有用”。要进一步解释它具体解决了什么问题，以及为什么这一点重要。</div>
+    </section>
+
+    <!-- 06 -->
+    <section class="page" data-title="观点类作文：完整结构示范" data-group="二、主要题型与结构">
+      <div class="kicker">MODEL STRUCTURE</div>
+      <h2>观点类作文：完整结构示范</h2>
+      <p class="lead">下面用一个完整的三段式提纲，展示如何把观点转化为一篇有逻辑的文章。</p>
+      <h3>题目</h3>
+      <div class="callout gold">Some people argue that university education should focus more on developing students' practical abilities. Do you agree or disagree?</div>
+      <h3>写作提纲</h3>
+      <table>
+        <tr><th>段落</th><th>核心内容</th><th>逻辑功能</th></tr>
+        <tr><td>第一段</td><td>大学教育不仅传授知识，也应培养实践能力；明确支持加强实践教育。</td><td>引出话题、提出立场</td></tr>
+        <tr><td>第二段</td><td>实践能力有助于知识应用；真实任务能培养沟通、合作和解决问题的能力。</td><td>提供理由、解释观点</td></tr>
+        <tr><td>第三段</td><td>实践教育不应取代理论学习；大学应实现知识与实践的结合。</td><td>深化观点、形成结论</td></tr>
+      </table>
+      <h3>参考范文</h3>
+      <div class="en">
+        University education has long been expected to provide students with academic knowledge. However, as the demands of the workplace continue to change, the importance of practical abilities has become increasingly evident. In my view, universities should place greater emphasis on helping students develop these abilities.
+        <br><br>
+        Practical experience enables students to apply what they have learned in real situations. A student may understand the principles of teamwork in a textbook, but working on a group project teaches them how to communicate, coordinate responsibilities and deal with unexpected difficulties. More importantly, such experiences help students develop problem-solving skills that cannot be fully acquired through lectures alone.
+        <br><br>
+        Nevertheless, practical training should complement rather than replace academic learning. A solid theoretical foundation allows students to understand problems more deeply and adapt to new challenges. Therefore, universities should create more opportunities for practical learning while continuing to provide high-quality academic education.
+      </div>
+      <h3>结构拆解</h3>
+      <ul>
+        <li><b>第一段：</b>从大学教育的传统目标转向现实需求，最后提出立场。</li>
+        <li><b>第二段：</b>通过“知识应用”和“能力培养”两个角度论证。</li>
+        <li><b>第三段：</b>承认理论学习的价值，进一步提出二者互补的观点。</li>
+      </ul>
+      <div class="callout gold">值得学习的地方：文章并没有机械地写“第一，第二，第三”，而是围绕一个中心立场逐层推进。结构清楚，但语言并不僵硬。</div>
+    </section>
+
+    <!-- 07 -->
+    <section class="page" data-title="第三部分：现象分析类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 02 · PHENOMENON ANALYSIS</div>
+      <h2>第三部分：现象分析类作文</h2>
+      <p class="lead">现象分析类作文要求你解释某种现象为什么出现、说明它意味着什么，并在必要时作出评价。</p>
+      <h3>1. 常见题目特征</h3>
+      <ul>
+        <li>某种社会现象越来越普遍。</li>
+        <li>某种行为在大学生群体中受到关注。</li>
+        <li>某种新的生活方式或技术正在改变人们的生活。</li>
+        <li>题目要求分析某种趋势背后的原因或影响。</li>
+      </ul>
+      <h3>2. 推荐结构：现象—原因/影响—评价</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：描述现象</b><br>说明现象是什么、有什么表现，以及为什么值得关注。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：分析原因或影响</b><br>从个人、社会、技术、经济或文化等角度进行解释。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：作出评价或提出方向</b><br>说明如何看待这一现象，或者指出未来应当如何发展。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">In recent years, an increasing number of college students have chosen to take online courses. What has contributed to this trend, and what impact does it have on students?</div>
+      <h3>4. 这道题包含两个明确任务</h3>
+      <div class="grid2">
+        <div class="card"><h4>任务一：原因</h4><p>为什么越来越多的大学生选择在线课程？</p><p>可能涉及学习灵活性、资源丰富、时间安排等。</p></div>
+        <div class="card"><h4>任务二：影响</h4><p>在线课程对学生产生了什么影响？</p><p>可能涉及学习机会、自主学习能力和学习效果。</p></div>
+      </div>
+      <div class="callout red"><strong>容易出现的问题：</strong>整篇文章都在赞美在线课程，却没有回答它为什么流行；或者只分析原因，却完全忽略题目要求的影响。</div>
+      <h3>5. 分析原因时，可以使用的思考维度</h3>
+      <table>
+        <tr><th>角度</th><th>思考问题</th><th>例子</th></tr>
+        <tr><td>个人层面</td><td>人们的需求或观念发生了什么变化？</td><td>更重视自主学习</td></tr>
+        <tr><td>技术层面</td><td>技术进步提供了什么条件？</td><td>网络平台和数字资源更加普及</td></tr>
+        <tr><td>社会层面</td><td>社会环境发生了什么变化？</td><td>终身学习需求增加</td></tr>
+        <tr><td>制度层面</td><td>学校或组织提供了什么支持？</td><td>高校开放更多在线课程</td></tr>
+      </table>
+    </section>
+
+    <!-- 08 -->
+    <section class="page" data-title="现象分析：原因与影响如何展开" data-group="二、主要题型与结构">
+      <div class="kicker">ANALYSIS IN PRACTICE</div>
+      <h2>现象分析：原因与影响如何展开</h2>
+      <p class="lead">分析类作文最容易写成空洞的观点堆积。要让分析真正成立，需要建立“原因—结果”或“现象—影响”的逻辑关系。</p>
+      <h3>1. 原因分析：从表面走向深层</h3>
+      <p>例如，在线学习受到欢迎，不能只写“因为它很方便”。你需要进一步解释方便体现在哪里，以及这种便利为什么会改变学生的选择。</p>
+      <div class="structure">
+        <div class="step"><div class="step-no">A</div><div class="step-content"><b>表层原因：灵活性</b><br>Students can arrange their study schedules more flexibly.</div></div>
+        <div class="step"><div class="step-no">B</div><div class="step-content"><b>具体解释：时间与地点不受限制</b><br>They can access learning materials whenever and wherever necessary.</div></div>
+        <div class="step"><div class="step-no">C</div><div class="step-content"><b>深层意义：降低学习门槛</b><br>This makes educational resources more accessible to students with different needs.</div></div>
+      </div>
+      <h3>2. 影响分析：区分直接影响与长期影响</h3>
+      <table>
+        <tr><th>影响层次</th><th>在线学习的例子</th></tr>
+        <tr><td>直接影响</td><td>学生能够接触更多课程和学习资源。</td></tr>
+        <tr><td>能力影响</td><td>学生需要管理时间，并提高自主学习能力。</td></tr>
+        <tr><td>长期影响</td><td>学习方式更加灵活，终身学习的机会有所增加。</td></tr>
+      </table>
+      <h3>3. 示例段落</h3>
+      <div class="en">
+        Several factors have contributed to the growing popularity of online learning. One major reason is its flexibility. Unlike traditional classroom courses, online programs allow students to study at their own pace and arrange their schedules according to personal needs. In addition, digital platforms provide access to a wide range of educational resources, making it easier for students to explore subjects beyond their university curriculum.
+      </div>
+      <p class="cn">分析：先提出原因，再解释原因如何发挥作用，最后补充另一个原因。每个观点都得到了具体说明。</p>
+      <h3>4. 训练一个重要能力：不要只写名词</h3>
+      <div class="grid2">
+        <div class="card"><h4>较弱表达</h4><p>Online learning is flexible and convenient.</p><p class="cn">只给出两个形容词，没有解释。</p></div>
+        <div class="card"><h4>更充分的表达</h4><p>Online learning allows students to access courses at different times, which makes it easier for them to balance academic study with other responsibilities.</p><p class="cn">解释了便利的具体表现和实际价值。</p></div>
+      </div>
+      <div class="callout">记住：分析不是把几个原因列出来，而是解释这些原因如何导致某种现象，或者某种现象为什么会产生特定影响。</div>
+    </section>
+
+    <!-- 09 -->
+    <section class="page" data-title="第四部分：问题解决类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 03 · PROBLEM-SOLUTION ESSAY</div>
+      <h2>第四部分：问题解决类作文</h2>
+      <p class="lead">问题解决类作文的重点是提出真正针对问题的措施，而不是泛泛地呼吁大家提高意识。</p>
+      <h3>1. 常见题目特征</h3>
+      <ul>
+        <li>某个问题正在影响个人或社会。</li>
+        <li>题目要求讨论如何改善某种状况。</li>
+        <li>题目要求学生、学校、政府或社会采取行动。</li>
+      </ul>
+      <h3>2. 推荐结构：问题—原因—措施</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：指出问题及其重要性</b><br>明确说明问题是什么，以及为什么需要解决。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：分析问题的原因或后果</b><br>解释问题为何产生，或不解决会带来什么影响。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：提出具体措施</b><br>明确由谁采取行动、采取什么行动，以及预期效果。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">Many college students find it difficult to manage their time effectively. What are the possible reasons, and what can be done to address this problem?</div>
+      <h3>4. 解决方案需要具备三个要素</h3>
+      <div class="grid3">
+        <div class="card"><h4>主体</h4><p>Who should take action?</p><p class="cn">谁来解决？学生、学校还是社会？</p></div>
+        <div class="card"><h4>措施</h4><p>What should be done?</p><p class="cn">具体采取什么行动？</p></div>
+        <div class="card"><h4>效果</h4><p>How will it help?</p><p class="cn">为什么这项措施有效？</p></div>
+      </div>
+      <h3>5. 把空泛建议改成具体措施</h3>
+      <table>
+        <tr><th>空泛表达</th><th>更具体的表达</th></tr>
+        <tr><td>Students should manage their time better.</td><td>Students can set weekly priorities and divide large tasks into smaller steps.</td></tr>
+        <tr><td>Universities should help students.</td><td>Universities can offer time-management workshops and provide academic counseling.</td></tr>
+        <tr><td>People should pay more attention to the problem.</td><td>Public campaigns can help students recognize the consequences of poor time management.</td></tr>
+      </table>
+      <div class="callout gold">高分建议不是越宏大越好，而是越有针对性越好。一个具体、合理、能够执行的建议，通常比三个空洞口号更有说服力。</div>
+    </section>
+
+    <!-- 10 -->
+    <section class="page" data-title="问题解决：措施如何写得有说服力" data-group="二、主要题型与结构">
+      <div class="kicker">SOLUTION DESIGN</div>
+      <h2>问题解决：措施如何写得有说服力</h2>
+      <p class="lead">提出建议时，要避免“人人都应该努力”“社会应该重视”等没有具体行动主体的表达。</p>
+      <h3>1. 常见的三个行动主体</h3>
+      <table>
+        <tr><th>行动主体</th><th>适合提出的措施</th><th>英文表达示例</th></tr>
+        <tr><td>个人 / 学生</td><td>调整习惯、制定计划、主动学习</td><td>Students can develop realistic study plans.</td></tr>
+        <tr><td>学校 / 教育机构</td><td>课程支持、资源供给、指导服务</td><td>Universities can provide practical guidance.</td></tr>
+        <tr><td>社会 / 政府</td><td>公共服务、制度建设、宣传教育</td><td>Public institutions can improve access to relevant services.</td></tr>
+      </table>
+      <h3>2. 建议的逻辑链条</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>提出措施</b><br>Students should break large assignments into manageable tasks.</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>解释如何实施</b><br>They can set deadlines for each stage and review their progress regularly.</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>说明预期效果</b><br>This approach can reduce procrastination and make their workload easier to manage.</div></div>
+      </div>
+      <h3>3. 示例主体段</h3>
+      <div class="en">
+        To address this problem, students should develop a more systematic approach to time management. Instead of leaving major assignments until the last minute, they can divide each task into smaller steps and set a deadline for every stage. Universities can also provide guidance on study planning and encourage students to use campus resources effectively. These measures would help students develop more sustainable learning habits.
+      </div>
+      <h3>4. 注意题目是否要求分析原因</h3>
+      <p>如果题目只问“What can be done to improve...?”，不必花大量篇幅分析原因。可以简短交代问题，然后把重点放在措施上。</p>
+      <p>如果题目同时问“What are the reasons and what can be done?”，那么原因和措施都必须得到充分回应。</p>
+      <div class="callout red"><strong>结构不是固定配方：</strong>段落篇幅应当根据题目任务分配。题目要求两项任务，就要确保两项任务都有足够内容。</div>
+    </section>
+
+    <!-- 11 -->
+    <section class="page" data-title="第五部分：比较选择类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 04 · COMPARISON & CHOICE</div>
+      <h2>第五部分：比较选择类作文</h2>
+      <p class="lead">比较类作文不是简单地写出A和B的区别，而是通过比较得出有依据的判断。</p>
+      <h3>1. 常见题目形式</h3>
+      <ul>
+        <li>Some people prefer A, while others prefer B. Which do you think is better?</li>
+        <li>Compare the advantages and disadvantages of A and B.</li>
+        <li>Should students choose online learning or traditional classroom learning?</li>
+      </ul>
+      <h3>2. 推荐结构：介绍—比较—选择</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：介绍两种选择</b><br>说明两种方式都存在，并引出比较主题。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：比较关键差异</b><br>选择一到两个共同维度进行比较，避免想到什么写什么。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：明确选择并说明条件</b><br>给出自己的判断，并解释这一选择适合什么情况。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">Some students prefer studying alone, while others believe that studying in groups is more effective. Which approach do you prefer?</div>
+      <h3>4. 比较之前，先确定比较维度</h3>
+      <table>
+        <tr><th>比较维度</th><th>独立学习</th><th>小组学习</th></tr>
+        <tr><td>学习节奏</td><td>可以自主安排</td><td>需要协调成员进度</td></tr>
+        <tr><td>信息交流</td><td>主要依赖个人思考</td><td>能够交换观点和经验</td></tr>
+        <tr><td>适用任务</td><td>阅读、复习、个人研究</td><td>讨论、合作项目、头脑风暴</td></tr>
+      </table>
+      <h3>5. 比较类作文的核心技巧</h3>
+      <p>不要把文章写成两个互不相关的介绍段落。比较必须围绕同一个维度展开，读者才能看出差异。</p>
+      <div class="en">
+        While studying alone allows students to work at their own pace, group study creates opportunities for exchanging ideas and learning from others.
+      </div>
+      <p class="cn">这里使用while形成对照，比较的是两种学习方式在学习体验上的差异。</p>
+      <div class="callout">即使题目要求二选一，也不必把另一种方式写得一无是处。承认不同选择的适用场景，反而能让你的判断更加成熟。</div>
+    </section>
+
+    <!-- 12 -->
+    <section class="page" data-title="比较选择：如何形成自己的判断" data-group="二、主要题型与结构">
+      <div class="kicker">MAKING A REASONED CHOICE</div>
+      <h2>比较选择：如何形成自己的判断</h2>
+      <p class="lead">好的比较不是平均分配篇幅，而是找到对题目最重要的判断标准。</p>
+      <h3>1. 先问自己：什么标准最重要？</h3>
+      <p>例如，比较线上学习与线下学习，可以从以下角度展开：</p>
+      <div class="grid2">
+        <div class="card"><h4>学习效率</h4><p>哪种方式更适合集中注意力、及时获得反馈？</p></div>
+        <div class="card"><h4>学习灵活性</h4><p>哪种方式更容易适应不同学生的时间安排？</p></div>
+        <div class="card"><h4>互动质量</h4><p>哪种方式更容易形成讨论和交流？</p></div>
+        <div class="card"><h4>资源可及性</h4><p>哪种方式更容易让学生接触多样化资源？</p></div>
+      </div>
+      <h3>2. 参考范文</h3>
+      <div class="en">
+        Students have different preferences when it comes to learning independently or studying with others. Although both approaches have their own advantages, I believe that group study is particularly valuable when students need to understand complex ideas.
+        <br><br>
+        Studying alone allows learners to concentrate and work at their own pace. However, group study provides something that individual learning may lack: the opportunity to exchange perspectives. When students discuss a difficult topic, they can discover different ways of understanding the same problem. They may also identify gaps in their own knowledge through questions raised by others.
+        <br><br>
+        This does not mean that individual study is unnecessary. In fact, the two approaches can complement each other. Students can first review materials independently and then use group discussions to deepen their understanding. In this way, learning becomes both focused and interactive.
+      </div>
+      <h3>3. 范文的逻辑特点</h3>
+      <ul>
+        <li>第一段没有绝对否定独立学习，而是明确说明小组学习更适合特定任务。</li>
+        <li>第二段先承认独立学习的优点，再突出小组学习的独特价值。</li>
+        <li>第三段提出二者互补，使结论更加完整。</li>
+      </ul>
+      <div class="callout gold">比较类文章可以使用“有条件的选择”：我更倾向于A，但B在某些情况下同样有价值。这样的观点通常比绝对化表达更容易展开。</div>
+    </section>
+
+    <!-- 13 -->
+    <section class="page" data-title="第六部分：利弊评价类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 05 · ADVANTAGES & DISADVANTAGES</div>
+      <h2>第六部分：利弊评价类作文</h2>
+      <p class="lead">利弊分析的重点是全面评价某种事物的影响，而不是简单地把优点和缺点各列一遍。</p>
+      <h3>1. 常见题目特征</h3>
+      <ul>
+        <li>讨论某种技术或新趋势带来的影响。</li>
+        <li>分析某种行为或生活方式的优点与不足。</li>
+        <li>评价某种做法是否值得推广。</li>
+      </ul>
+      <h3>2. 推荐结构：引出主题—分析利弊—综合评价</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：介绍讨论对象</b><br>说明某种事物越来越普遍，或正在改变人们的生活。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：分析积极与消极影响</b><br>分别讨论主要优势和潜在问题，并解释其形成原因。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：作出综合评价</b><br>说明如何合理利用优势、减少风险，或者给出总体判断。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">Artificial intelligence is increasingly used in education. What benefits and challenges does it bring to college students?</div>
+      <h3>4. 组织利弊内容时，避免简单罗列</h3>
+      <table>
+        <tr><th>方面</th><th>表面观点</th><th>进一步解释</th></tr>
+        <tr><td>优势</td><td>提高学习效率</td><td>快速提供解释和反馈，帮助学生理解复杂知识。</td></tr>
+        <tr><td>优势</td><td>学习资源更加丰富</td><td>学生可以根据自身需求获得个性化学习支持。</td></tr>
+        <tr><td>风险</td><td>产生依赖</td><td>过度依赖工具可能减少独立思考和主动探索。</td></tr>
+        <tr><td>风险</td><td>信息不准确</td><td>未经核实的内容可能误导学习判断。</td></tr>
+      </table>
+      <h3>5. 评价时可以采用的思路</h3>
+      <p>不要简单得出“人工智能有好有坏”的结论。可以进一步提出：技术本身并不必然决定结果，使用者的目的、能力和使用方式同样重要。</p>
+      <div class="en">
+        The key is not to avoid artificial intelligence altogether, but to use it as a tool for learning rather than a substitute for independent thinking.
+      </div>
+    </section>
+
+    <!-- 14 -->
+    <section class="page" data-title="第七部分：建议倡议类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 06 · SUGGESTION & CALL TO ACTION</div>
+      <h2>第七部分：建议倡议类作文</h2>
+      <p class="lead">建议倡议类作文强调行动导向。你不仅要说明为什么某件事重要，还要告诉读者可以怎样做。</p>
+      <h3>1. 常见写作任务</h3>
+      <ul>
+        <li>如何培养某种能力或良好习惯？</li>
+        <li>如何鼓励大学生参与社会实践？</li>
+        <li>如何保护环境、促进健康或改善校园生活？</li>
+        <li>为什么应该采取某种行动？</li>
+      </ul>
+      <h3>2. 推荐结构：重要性—行动建议—预期意义</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：说明主题的重要性</b><br>解释为什么值得关注，明确倡议的方向。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：提出具体行动建议</b><br>从个人行为、学校支持或社会参与等角度展开。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：总结行动价值</b><br>强调行动可能带来的积极变化。</div></div>
+      </div>
+      <h3>3. 示例题目</h3>
+      <div class="callout gold">College students should develop a stronger awareness of environmental protection. What can they do in their daily lives?</div>
+      <h3>4. 建议内容可以分成三个层次</h3>
+      <div class="grid3">
+        <div class="card"><h4>个人习惯</h4><p>减少一次性用品、节约能源、合理消费。</p></div>
+        <div class="card"><h4>校园参与</h4><p>参加环保活动、推广垃圾分类、参与校园项目。</p></div>
+        <div class="card"><h4>公共影响</h4><p>分享环保知识、影响身边的人、支持可持续生活方式。</p></div>
+      </div>
+      <h3>5. 建议类文章的语言特点</h3>
+      <div class="en">
+        College students can make a difference through small but consistent actions. For example, they can reduce unnecessary waste, choose reusable products and take part in environmental activities on campus.
+      </div>
+      <p class="cn">这里没有使用夸张的口号，而是用具体行动说明大学生能够做什么。</p>
+      <div class="callout">建议类文章的说服力来自可执行性。写完每条建议后，可以问自己：读者是否知道下一步具体应该做什么？</div>
+    </section>
+
+    <!-- 15 -->
+    <section class="page" data-title="第八部分：图表与材料类作文" data-group="二、主要题型与结构">
+      <div class="kicker">TYPE 07 · DATA & MATERIAL-BASED WRITING</div>
+      <h2>第八部分：图表与材料类作文</h2>
+      <p class="lead">图表或材料类写作需要你准确理解给定信息，并在此基础上进行解释。不能只描述数据，也不能脱离材料自由发挥。</p>
+      <h3>1. 图表类写作的基本任务</h3>
+      <ul>
+        <li>识别图表主题、时间范围和数据对象。</li>
+        <li>概括主要趋势、变化或差异。</li>
+        <li>解释可能的原因，或说明数据反映的意义。</li>
+      </ul>
+      <h3>2. 推荐结构：描述—解释—评价</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>第一段：概括图表信息</b><br>指出主要趋势或最明显的变化，不要逐项抄写数据。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>第二段：分析原因或意义</b><br>结合社会背景解释变化，注意避免没有依据的推断。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>第三段：总结趋势或提出观点</b><br>说明变化的意义，或提出合理建议。</div></div>
+      </div>
+      <h3>3. 假设图表信息</h3>
+      <div class="card">
+        <h4>大学生每周阅读时间变化（示例数据）</h4>
+        <table>
+          <tr><th>年份</th><th>每周平均阅读时间</th></tr>
+          <tr><td>2021</td><td>3.2小时</td></tr>
+          <tr><td>2022</td><td>3.8小时</td></tr>
+          <tr><td>2023</td><td>4.5小时</td></tr>
+          <tr><td>2024</td><td>5.1小时</td></tr>
+        </table>
+        <p class="cn">注意：以上为教学演示数据，不代表真实调查结果。</p>
+      </div>
+      <h3>4. 如何概括趋势？</h3>
+      <div class="en">
+        The chart shows a steady increase in the average amount of time college students spend reading each week, rising from 3.2 hours in 2021 to 5.1 hours in 2024.
+      </div>
+      <p class="cn">先概括整体趋势，再选取起点和终点数据作为支持，不需要把每个数字都写一遍。</p>
+      <h3>5. 材料类作文的注意事项</h3>
+      <p>如果题目提供一段文字、一句名言或一个具体案例，写作时应先准确理解材料的核心含义，再围绕材料提出自己的观点。不能只复述材料，也不能完全抛开材料另写一篇文章。</p>
+      <div class="callout gold">重要提醒：六级写作题目形式会变化。图表、材料、情境和观点指令可能相互结合，具体写法必须服从当次题目要求。</div>
+    </section>
+
+    <!-- 16 -->
+    <section class="page" data-title="第九部分：三段式结构的底层逻辑" data-group="三、结构设计方法">
+      <div class="kicker">PART 02 · PARAGRAPH ORGANIZATION</div>
+      <h2>第九部分：三段式结构的底层逻辑</h2>
+      <p class="lead">三段式不是要求所有作文都长得一样，而是提供一种清晰、稳定、容易控制的组织方式。</p>
+      <h3>1. 三段式分别承担什么功能？</h3>
+      <div class="grid3">
+        <div class="card"><div class="big">01</div><h4>Introduction</h4><p>告诉读者文章讨论什么，以及作者准备如何回答问题。</p></div>
+        <div class="card"><div class="big">02</div><h4>Body</h4><p>提供理由、解释、例子、比较或解决方案，完成主要论证。</p></div>
+        <div class="card"><div class="big">03</div><h4>Conclusion</h4><p>回扣中心观点，概括主要意义，必要时指出行动方向。</p></div>
+      </div>
+      <h3>2. 一篇文章的核心不是三个段落，而是一条逻辑线</h3>
+      <div class="callout gold">
+        <b>提出问题 / 引出主题</b><br>
+        ↓<br>
+        <b>回答问题 / 解释理由 / 展开论证</b><br>
+        ↓<br>
+        <b>得出结论 / 回应题目</b>
+      </div>
+      <p>如果三个段落之间没有逻辑关系，即使每段都写得很长，也不一定是一篇好文章。</p>
+      <h3>3. 题型变化，段落功能也会变化</h3>
+      <table>
+        <tr><th>题型</th><th>第一段</th><th>第二段</th><th>第三段</th></tr>
+        <tr><td>观点表达</td><td>引出话题、表明立场</td><td>理由与论证</td><td>总结立场</td></tr>
+        <tr><td>现象分析</td><td>描述现象</td><td>分析原因或影响</td><td>评价或展望</td></tr>
+        <tr><td>问题解决</td><td>指出问题</td><td>分析原因或后果</td><td>提出措施</td></tr>
+        <tr><td>比较选择</td><td>介绍比较对象</td><td>比较关键差异</td><td>作出选择</td></tr>
+        <tr><td>利弊评价</td><td>引出讨论对象</td><td>分析利弊</td><td>综合评价</td></tr>
+        <tr><td>建议倡议</td><td>说明重要性</td><td>提出行动建议</td><td>总结行动意义</td></tr>
+      </table>
+      <div class="callout">你需要记住的是段落功能，而不是固定句子。只要段落完成了相应任务，就不必为了套模板而添加多余内容。</div>
+    </section>
+
+    <!-- 17 -->
+    <section class="page" data-title="第一段：如何有效开篇" data-group="三、结构设计方法">
+      <div class="kicker">THE INTRODUCTION</div>
+      <h2>第一段：如何有效开篇</h2>
+      <p class="lead">开头段的任务是尽快把读者带入主题，并让读者知道你将如何回应题目。</p>
+      <h3>1. 三种常见开篇方式</h3>
+      <div class="structure">
+        <h4>方式一：背景引入</h4>
+        <p>从社会变化、时代背景或生活现象切入。</p>
+        <div class="en">With the rapid development of digital technology, online learning has become an increasingly common part of university education.</div>
+      </div>
+      <div class="structure">
+        <h4>方式二：直接提出主题</h4>
+        <p>适合题目明确、讨论对象清楚的情况。</p>
+        <div class="en">Time management is an essential skill for college students, especially when they need to balance academic work and personal responsibilities.</div>
+      </div>
+      <div class="structure">
+        <h4>方式三：提出观点或争议</h4>
+        <p>适合观点类、比较类题目。</p>
+        <div class="en">Whether university students should focus more on academic knowledge or practical experience has become a widely discussed issue.</div>
+      </div>
+      <h3>2. 开头段需要完成的两个任务</h3>
+      <ul>
+        <li><b>引出主题：</b>让读者知道文章在讨论什么。</li>
+        <li><b>回应题目：</b>明确立场、分析方向或文章要解决的问题。</li>
+      </ul>
+      <h3>3. 常见问题</h3>
+      <div class="grid2">
+        <div class="card"><h4>背景过长</h4><p>用大量篇幅介绍一个与题目关系不大的宏观背景，迟迟不进入主题。</p></div>
+        <div class="card"><h4>观点不明确</h4><p>第一段写了很多现象，却没有告诉读者文章究竟要论证什么。</p></div>
+        <div class="card"><h4>套话堆积</h4><p>使用空泛的时代背景句，却没有提供有效信息。</p></div>
+        <div class="card"><h4>偏离题意</h4><p>开头讨论了相关话题，但没有准确回应题目中的具体任务。</p></div>
+      </div>
+      <div class="callout gold">开头段不需要故意写得复杂。通常用两到三句话完成引入和立场表达，就足以为主体段做好准备。</div>
+    </section>
+
+    <!-- 18 -->
+    <section class="page" data-title="第二段：主体段如何组织" data-group="三、结构设计方法">
+      <div class="kicker">THE BODY PARAGRAPH</div>
+      <h2>第二段：主体段如何组织</h2>
+      <p class="lead">主体段是整篇文章的核心。你的观点是否有说服力，主要取决于主体段是否真正解释了观点。</p>
+      <h3>1. 一个实用的主体段模型</h3>
+      <div class="callout gold">
+        <b>Topic Sentence</b>：提出本段中心观点<br>
+        ↓<br>
+        <b>Explanation</b>：解释为什么这一观点成立<br>
+        ↓<br>
+        <b>Example / Evidence</b>：提供例子或具体情境<br>
+        ↓<br>
+        <b>Link</b>：回扣中心论点，说明这一点的意义
+      </div>
+      <h3>2. 示例：论证实践能力的重要性</h3>
+      <div class="en">
+        Practical experience plays an important role in preparing students for future careers. This is because many workplace tasks require more than theoretical knowledge; they also involve communication, cooperation and problem-solving. For example, students who participate in internships or group projects can learn how to deal with real challenges and work with people from different backgrounds. Such experiences make the transition from university to the workplace smoother.
+      </div>
+      <h3>3. 拆解段落中的四个部分</h3>
+      <table>
+        <tr><th>功能</th><th>对应内容</th></tr>
+        <tr><td>中心句</td><td>Practical experience plays an important role...</td></tr>
+        <tr><td>解释</td><td>Many workplace tasks require more than theoretical knowledge...</td></tr>
+        <tr><td>例子</td><td>For example, students who participate in internships...</td></tr>
+        <tr><td>回扣</td><td>Such experiences make the transition...</td></tr>
+      </table>
+      <h3>4. 并不是每个主体段都必须写例子</h3>
+      <p>如果你的解释已经足够具体，就不必为了满足固定格式而硬塞一个例子。主体段的核心要求是观点得到充分展开，而不是机械地包含四个句子。</p>
+      <div class="callout red"><strong>常见问题：</strong>一个段落写了四五个观点，却没有解释任何一个观点。这样的段落看似信息丰富，实际上缺少论证深度。</div>
+    </section>
+
+    <!-- 19 -->
+    <section class="page" data-title="第三段：结尾如何收束全文" data-group="三、结构设计方法">
+      <div class="kicker">THE CONCLUSION</div>
+      <h2>第三段：结尾如何收束全文</h2>
+      <p class="lead">结尾不是把前两段重新抄一遍，而是让文章形成完整的逻辑闭环。</p>
+      <h3>1. 结尾段的三个常见功能</h3>
+      <div class="grid3">
+        <div class="card"><h4>重申立场</h4><p>再次明确文章的核心观点。</p></div>
+        <div class="card"><h4>概括意义</h4><p>总结前文分析的重要价值。</p></div>
+        <div class="card"><h4>提出方向</h4><p>指出未来行动、改进方向或合理期待。</p></div>
+      </div>
+      <h3>2. 不同类型的结尾示例</h3>
+      <div class="structure">
+        <h4>观点表达类</h4>
+        <div class="en">For these reasons, I believe that practical experience should be an essential part of university education.</div>
+      </div>
+      <div class="structure">
+        <h4>问题解决类</h4>
+        <div class="en">With consistent efforts from both students and universities, this problem can be addressed more effectively.</div>
+      </div>
+      <div class="structure">
+        <h4>利弊评价类</h4>
+        <div class="en">Ultimately, the benefits of this development depend largely on how responsibly it is used.</div>
+      </div>
+      <div class="structure">
+        <h4>建议倡议类</h4>
+        <div class="en">Small actions, when taken consistently, can contribute to meaningful changes in campus life.</div>
+      </div>
+      <h3>3. 结尾段需要避免什么？</h3>
+      <ul>
+        <li>不要突然引入前文完全没有讨论的新观点。</li>
+        <li>不要只写一句空泛的“我们应该共同努力”。</li>
+        <li>不要为了显得高级而使用自己并不熟悉的复杂表达。</li>
+        <li>不要把结尾写得过长，导致文章失去重点。</li>
+      </ul>
+      <div class="callout gold">好的结尾应该让读者感到：前面提出的问题已经得到了回应，文章的主要观点也已经完整表达。</div>
+    </section>
+
+    <!-- 20 -->
+    <section class="page" data-title="第十部分：如何选择合适的篇章结构" data-group="三、结构设计方法">
+      <div class="kicker">CHOOSING THE RIGHT STRUCTURE</div>
+      <h2>第十部分：如何选择合适的篇章结构</h2>
+      <p class="lead">同一个话题可能对应不同任务。真正决定文章结构的，不是话题本身，而是题目要求你完成什么。</p>
+      <h3>1. 看看同一个话题可以怎样变化</h3>
+      <p>以“人工智能与大学生学习”为例：</p>
+      <table>
+        <tr><th>题目要求</th><th>主要任务</th><th>适合的结构</th></tr>
+        <tr><td>Do you think AI tools are beneficial to college students?</td><td>表达观点</td><td>立场—理由—总结</td></tr>
+        <tr><td>Why are AI tools becoming popular among students?</td><td>分析原因</td><td>现象—原因—评价</td></tr>
+        <tr><td>How can students use AI responsibly?</td><td>提出建议</td><td>重要性—措施—意义</td></tr>
+        <tr><td>What are the benefits and risks of AI in education?</td><td>分析利弊</td><td>引入—利弊—综合评价</td></tr>
+        <tr><td>Should students rely on AI or traditional learning methods?</td><td>比较选择</td><td>介绍—比较—选择</td></tr>
+      </table>
+      <h3>2. 结构选择的判断流程</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>题目是否要求表达立场？</b><br>如果是，确保全文围绕明确立场展开。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>题目是否要求解释原因或影响？</b><br>如果是，主体段必须有清晰的因果分析。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>题目是否要求提出措施？</b><br>如果是，必须给出具体、可执行的行动建议。</div></div>
+        <div class="step"><div class="step-no">4</div><div class="step-content"><b>题目是否要求比较或评价？</b><br>如果是，确定比较标准，并在结尾形成判断。</div></div>
+      </div>
+      <div class="callout">如果题目同时包含多个任务，就把多个任务合理分配到三个段落中。不要为了追求“纯粹题型”而忽略题目本身。</div>
+    </section>
+
+    <!-- 21 -->
+    <section class="page" data-title="第十一部分：综合型题目的结构处理" data-group="三、结构设计方法">
+      <div class="kicker">COMBINED TASKS</div>
+      <h2>第十一部分：综合型题目的结构处理</h2>
+      <p class="lead">真实写作任务往往不是单一类型。你需要学会将不同任务整合进一篇文章，而不是每遇到一个要求就另起一段。</p>
+      <h3>1. 综合题目示例</h3>
+      <div class="callout gold">In recent years, more college students have become interested in volunteering. Discuss the reasons for this trend and explain how universities can encourage more students to participate.</div>
+      <h3>2. 识别题目中的两个任务</h3>
+      <div class="grid2">
+        <div class="card"><h4>任务A：分析原因</h4><p>为什么越来越多的大学生参与志愿服务？</p></div>
+        <div class="card"><h4>任务B：提出建议</h4><p>大学可以采取什么措施鼓励学生参与？</p></div>
+      </div>
+      <h3>3. 推荐结构</h3>
+      <table>
+        <tr><th>段落</th><th>安排</th><th>具体内容</th></tr>
+        <tr><td>第一段</td><td>引出趋势</td><td>志愿服务受到大学生关注，说明文章将分析原因并讨论学校措施。</td></tr>
+        <tr><td>第二段</td><td>分析原因</td><td>社会责任意识增强；志愿活动提供实践机会和个人成长空间。</td></tr>
+        <tr><td>第三段</td><td>提出措施</td><td>学校完善活动信息、提供培训、建立认可机制。</td></tr>
+      </table>
+      <h3>4. 参考主体内容</h3>
+      <div class="en">
+        Several factors explain this growing interest. For one thing, many students have become more aware of their social responsibilities and wish to contribute to their communities. For another, volunteering provides valuable opportunities to develop communication skills and gain practical experience.
+      </div>
+      <div class="en">
+        Universities can further encourage participation by providing more accessible information about volunteer programs, offering basic training and recognizing students' contributions. Such support would make volunteering easier to join and more meaningful for participants.
+      </div>
+      <h3>5. 处理综合题目的原则</h3>
+      <ul>
+        <li>先找出所有明确任务，不要遗漏。</li>
+        <li>判断哪些任务适合放在同一段中。</li>
+        <li>根据任务的重要性分配篇幅。</li>
+        <li>每个段落都应有清楚的中心功能。</li>
+      </ul>
+      <div class="callout gold">综合题目不等于文章一定要写四段或五段。只要三段能够清楚完成全部任务，就没有必要为了形式增加段落。</div>
+    </section>
+
+    <!-- 22 -->
+    <section class="page" data-title="第十二部分：常见结构错误与修正" data-group="四、实战与训练">
+      <div class="kicker">COMMON STRUCTURAL MISTAKES</div>
+      <h2>第十二部分：常见结构错误与修正</h2>
+      <p class="lead">很多作文的问题并不是语法错误，而是文章的组织方式让读者难以理解作者的思路。</p>
+      <h3>错误一：开头很长，观点迟迟不出现</h3>
+      <div class="card">
+        <h4>问题表现</h4>
+        <p>用大量句子介绍社会背景，最后仍然没有明确表达立场。</p>
+        <h4>修正方法</h4>
+        <p>缩短背景介绍，在第一段末尾明确文章的核心观点或分析方向。</p>
+      </div>
+      <h3>错误二：主体段缺少中心句</h3>
+      <div class="card">
+        <h4>问题表现</h4>
+        <p>句子之间没有明显的主次关系，读者不知道这一段到底要证明什么。</p>
+        <h4>修正方法</h4>
+        <p>先写清楚本段中心观点，再围绕它解释和举例。</p>
+      </div>
+      <h3>错误三：观点之间缺少逻辑关系</h3>
+      <div class="card">
+        <h4>问题表现</h4>
+        <p>上一句谈学习效率，下一句突然谈环境保护，缺少自然过渡。</p>
+        <h4>修正方法</h4>
+        <p>重新检查每句话是否服务于本段中心观点，删除无关内容或调整顺序。</p>
+      </div>
+      <h3>错误四：结尾提出新观点</h3>
+      <div class="card">
+        <h4>问题表现</h4>
+        <p>前文讨论在线学习的便利性，结尾突然转向人工智能对就业市场的影响。</p>
+        <h4>修正方法</h4>
+        <p>结尾只总结前文已经讨论的内容，或在原有观点基础上作适度延伸。</p>
+      </div>
+      <h3>错误五：结构与题目任务不匹配</h3>
+      <div class="callout red">题目要求分析原因和提出建议，文章却全部在表达个人态度。这不是语言问题，而是审题和结构设计出现了偏差。</div>
+    </section>
+
+    <!-- 23 -->
+    <section class="page" data-title="实战案例：从题目到完整提纲" data-group="四、实战与训练">
+      <div class="kicker">PRACTICAL CASE STUDY</div>
+      <h2>实战案例：从题目到完整提纲</h2>
+      <p class="lead">接下来完整走一遍写作决策过程。注意：先拆题，再选结构，最后组织内容。</p>
+      <h3>题目</h3>
+      <div class="callout gold">Nowadays, an increasing number of young people choose to pursue personal interests outside their academic or professional responsibilities. Discuss the reasons for this trend and explain why it is important to maintain a balance between personal interests and other responsibilities.</div>
+      <h3>第一步：圈出任务</h3>
+      <ul>
+        <li>写作对象：年轻人发展个人兴趣的趋势。</li>
+        <li>任务一：Discuss the reasons——分析原因。</li>
+        <li>任务二：Explain why it is important to maintain a balance——解释保持平衡的重要性。</li>
+      </ul>
+      <h3>第二步：确定结构</h3>
+      <p>这是一道综合型题目，适合采用“现象引入—原因分析—意义评价”的三段式结构。</p>
+      <h3>第三步：形成提纲</h3>
+      <table>
+        <tr><th>段落</th><th>中心内容</th><th>展开方向</th></tr>
+        <tr><td>第一段</td><td>引出年轻人重视个人兴趣的趋势</td><td>个人兴趣逐渐成为生活的重要组成部分</td></tr>
+        <tr><td>第二段</td><td>分析原因</td><td>追求个人成长；缓解压力；寻找自我认同</td></tr>
+        <tr><td>第三段</td><td>解释保持平衡的重要性</td><td>避免忽视学业或工作；实现长期发展；保持健康生活</td></tr>
+      </table>
+      <h3>第四步：检查是否回应全部任务</h3>
+      <div class="exercise">
+        <div class="exercise-title">写作前自检</div>
+        <p>□ 是否介绍了年轻人发展个人兴趣这一趋势？</p>
+        <p>□ 是否分析了这一趋势产生的原因？</p>
+        <p>□ 是否解释了保持平衡的重要性？</p>
+        <p>□ 是否让三个段落形成完整的逻辑关系？</p>
+      </div>
+      <div class="callout">在真正动笔之前，先花一到两分钟完成这样的提纲。它能够有效减少写到一半才发现偏题、漏题或无话可写的情况。</div>
+    </section>
+
+    <!-- 24 -->
+    <section class="page" data-title="课堂练习一：判断题目类型" data-group="四、实战与训练">
+      <div class="kicker">CLASSROOM PRACTICE · 01</div>
+      <h2>课堂练习一：判断题目类型</h2>
+      <p class="lead">请阅读以下题目，判断其主要写作任务，并选择最合适的结构。注意部分题目可能包含多个任务。</p>
+
+      <div class="exercise">
+        <div class="exercise-title">QUESTION 01</div>
+        <p>Some people believe that reading printed books is more beneficial than reading digital materials. What is your opinion?</p>
+        <p><b>主要任务：</b>表达观点并提供理由。</p>
+        <button class="reveal" onclick="toggleAnswer('a1')">查看参考答案</button>
+        <div class="answer" id="a1">观点表达类。建议采用“引出话题并表明立场—提供理由—总结观点”的结构。也可以适度比较纸质阅读和数字阅读。</div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">QUESTION 02</div>
+        <p>Why are more people choosing to use public transportation in large cities?</p>
+        <p><b>主要任务：</b>解释一种社会现象。</p>
+        <button class="reveal" onclick="toggleAnswer('a2')">查看参考答案</button>
+        <div class="answer" id="a2">现象分析类，重点是原因分析。可以从交通拥堵、出行成本、环保意识和公共交通服务改善等角度展开。</div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">QUESTION 03</div>
+        <p>What can universities do to help students improve their communication skills?</p>
+        <p><b>主要任务：</b>提出具体建议。</p>
+        <button class="reveal" onclick="toggleAnswer('a3')">查看参考答案</button>
+        <div class="answer" id="a3">建议倡议类或问题解决类。重点写大学可以采取的具体措施，如增加团队项目、组织演讲活动、提供沟通训练等。</div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">QUESTION 04</div>
+        <p>Discuss the advantages and disadvantages of working while studying at university.</p>
+        <p><b>主要任务：</b>分析利弊。</p>
+        <button class="reveal" onclick="toggleAnswer('a4')">查看参考答案</button>
+        <div class="answer" id="a4">利弊评价类。主体部分应分析工作带来的经验和收入，也要讨论时间压力和学业影响，结尾形成综合判断。</div>
+      </div>
+
+      <div class="exercise">
+        <div class="exercise-title">QUESTION 05</div>
+        <p>Some students prefer studying abroad, while others choose to continue their education at home. Which do you prefer and why?</p>
+        <p><b>主要任务：</b>比较并作出选择。</p>
+        <button class="reveal" onclick="toggleAnswer('a5')">查看参考答案</button>
+        <div class="answer" id="a5">比较选择类。先确定比较维度，例如学习环境、费用、文化体验和职业规划，再说明自己的选择及理由。</div>
+      </div>
+    </section>
+
+    <!-- 25 -->
+    <section class="page" data-title="课堂练习二：为题目设计提纲" data-group="四、实战与训练">
+      <div class="kicker">CLASSROOM PRACTICE · 02</div>
+      <h2>课堂练习二：为题目设计提纲</h2>
+      <p class="lead">这一次不只是判断题型，而是尝试把题目转化为三个段落的写作计划。</p>
+      <div class="exercise">
+        <div class="exercise-title">TASK A · 观点表达</div>
+        <p>Do you agree that university students should take part in extracurricular activities?</p>
+        <p><b>请完成：</b>明确立场，并为主体段设计两个理由。</p>
+        <button class="reveal" onclick="toggleAnswer('b1')">查看参考提纲</button>
+        <div class="answer" id="b1">
+          第一段：引出课外活动与大学生活，明确认为适度参与课外活动有益。<br>
+          第二段：理由一，帮助学生发展沟通与合作能力；理由二，丰富校园生活并拓宽视野。<br>
+          第三段：强调合理安排时间，课外活动应与学业保持平衡。
+        </div>
+      </div>
+      <div class="exercise">
+        <div class="exercise-title">TASK B · 现象分析</div>
+        <p>More young people are interested in learning foreign languages. What are the possible reasons?</p>
+        <p><b>请完成：</b>列出两个原因，并分别写出一句解释。</p>
+        <button class="reveal" onclick="toggleAnswer('b2')">查看参考提纲</button>
+        <div class="answer" id="b2">
+          第一段：介绍年轻人学习外语的趋势。<br>
+          第二段：原因一，国际交流增加，外语有助于获取信息和沟通；原因二，教育与职业发展需要，外语能够拓宽学习和就业机会。<br>
+          第三段：总结外语学习的价值，强调持续学习和实际运用。
+        </div>
+      </div>
+      <div class="exercise">
+        <div class="exercise-title">TASK C · 问题解决</div>
+        <p>Many students spend too much time on their smartphones. What problems may this cause, and how can students deal with this situation?</p>
+        <p><b>请完成：</b>识别两个任务，并设计三个段落。</p>
+        <button class="reveal" onclick="toggleAnswer('b3')">查看参考提纲</button>
+        <div class="answer" id="b3">
+          第一段：指出过度使用智能手机已经影响部分学生的学习和生活。<br>
+          第二段：分析问题，如注意力分散、睡眠质量下降、面对面交流减少。<br>
+          第三段：提出措施，如设定使用时间、关闭非必要通知、增加线下活动。
+        </div>
+      </div>
+      <div class="callout gold">训练重点：每个段落先写一句中心句，再补充理由或例子。不要一开始就追求复杂句型。</div>
+    </section>
+
+    <!-- 26 -->
+    <section class="page" data-title="课后作业：独立完成结构设计" data-group="四、实战与训练">
+      <div class="kicker">AFTER-CLASS ASSIGNMENT</div>
+      <h2>课后作业：独立完成结构设计</h2>
+      <p class="lead">本次作业的重点不是写出一篇完美范文，而是训练你独立识别题目任务和组织篇章结构。</p>
+      <h3>作业题目</h3>
+      <div class="callout gold">In today's rapidly changing world, lifelong learning has become increasingly important. Why do people need to continue learning throughout their lives, and how can college students develop this habit?</div>
+      <h3>作业要求</h3>
+      <ol>
+        <li>标出题目中的写作对象和全部任务。</li>
+        <li>判断题目的主要类型。</li>
+        <li>设计三段式结构，每段写出中心句。</li>
+        <li>第二段至少列出两个原因或理由。</li>
+        <li>第三段提出至少两项具体、可执行的建议。</li>
+        <li>在提纲完成后，尝试写成一篇完整作文。</li>
+      </ol>
+      <h3>建议提纲方向</h3>
+      <table>
+        <tr><th>段落</th><th>思考方向</th></tr>
+        <tr><td>第一段</td><td>终身学习的背景与重要性</td></tr>
+        <tr><td>第二段</td><td>知识更新速度、职业变化、个人成长需求</td></tr>
+        <tr><td>第三段</td><td>建立阅读习惯、制定学习计划、利用线上课程、保持好奇心</td></tr>
+      </table>
+      <h3>提交前自查</h3>
+      <div class="exercise">
+        <p>□ 我准确理解了题目要求。</p>
+        <p>□ 我没有遗漏任何一个写作任务。</p>
+        <p>□ 三个段落各自承担明确的功能。</p>
+        <p>□ 主体段的观点得到了充分解释。</p>
+        <p>□ 建议具体且具有可执行性。</p>
+        <p>□ 结尾回应了文章的中心主题。</p>
+      </div>
+    </section>
+
+    <!-- 27 -->
+    <section class="page" data-title="本专题总结：建立自己的结构库" data-group="五、总结与拓展">
+      <div class="kicker">KEY TAKEAWAYS</div>
+      <h2>本专题总结：建立自己的结构库</h2>
+      <p class="lead">学完专题二，你需要掌握的不是七套固定模板，而是一套能够适应不同题目的结构判断能力。</p>
+      <h3>1. 常见任务类型回顾</h3>
+      <table>
+        <tr><th>任务类型</th><th>最重要的写作动作</th></tr>
+        <tr><td>观点表达</td><td>明确立场，并用理由支持立场</td></tr>
+        <tr><td>现象分析</td><td>解释现象产生的原因或影响</td></tr>
+        <tr><td>问题解决</td><td>分析问题，并提出有针对性的措施</td></tr>
+        <tr><td>比较选择</td><td>确定比较维度，作出有依据的选择</td></tr>
+        <tr><td>利弊评价</td><td>分析积极与消极影响，形成综合判断</td></tr>
+        <tr><td>建议倡议</td><td>提出具体行动，并解释其价值</td></tr>
+        <tr><td>图表材料</td><td>准确概括信息，再进行解释和评价</td></tr>
+      </table>
+      <h3>2. 写作前的五步流程</h3>
+      <div class="structure">
+        <div class="step"><div class="step-no">1</div><div class="step-content"><b>读题</b>：找出讨论对象。</div></div>
+        <div class="step"><div class="step-no">2</div><div class="step-content"><b>拆题</b>：圈出题目中的全部任务。</div></div>
+        <div class="step"><div class="step-no">3</div><div class="step-content"><b>立意</b>：确定文章的中心观点或分析方向。</div></div>
+        <div class="step"><div class="step-no">4</div><div class="step-content"><b>列纲</b>：安排三个段落的功能和内容。</div></div>
+        <div class="step"><div class="step-no">5</div><div class="step-content"><b>写作</b>：围绕提纲展开，不偏离中心任务。</div></div>
+      </div>
+      <h3>3. 最值得记住的三个原则</h3>
+      <div class="grid3">
+        <div class="card"><h4>任务优先</h4><p>题目要求什么，就优先完成什么。</p></div>
+        <div class="card"><h4>逻辑优先</h4><p>先保证观点和段落之间的逻辑，再考虑语言升级。</p></div>
+        <div class="card"><h4>灵活优先</h4><p>结构是组织思路的工具，不是限制表达的模板。</p></div>
+      </div>
+      <div class="callout gold"><strong>本专题的最终目标：</strong>面对一道陌生的六级作文题，你能够迅速识别写作任务，选出合适的结构，并清楚知道每一段应该写什么。</div>
+    </section>
+
+    <!-- 28 -->
+    <section class="page" data-title="教师参考：教学重点与拓展阅读" data-group="五、总结与拓展">
+      <div class="kicker">TEACHER'S NOTES & RESOURCES</div>
+      <h2>教师参考：教学重点与拓展阅读</h2>
+      <h3>一、教学重点</h3>
+      <ol>
+        <li>强调题型分类是教学工具，不是官方固定题型清单。</li>
+        <li>要求学生从题干任务出发，识别题目中的全部要求。</li>
+        <li>帮助学生理解三段式结构的段落功能，而非机械背诵模板。</li>
+        <li>训练学生将抽象观点转化为解释、例子和具体措施。</li>
+        <li>通过综合型题目，训练多项任务在同一篇文章中的组织能力。</li>
+      </ol>
+      <h3>二、建议教学顺序</h3>
+      <table>
+        <tr><th>教学环节</th><th>教师活动</th><th>学生产出</th></tr>
+        <tr><td>导入</td><td>展示不同题目，比较任务差异</td><td>初步判断题型</td></tr>
+        <tr><td>讲解</td><td>分析各类题型的段落功能</td><td>建立结构认知</td></tr>
+        <tr><td>示范</td><td>现场拆解题目并列提纲</td><td>掌握审题流程</td></tr>
+        <tr><td>训练</td><td>安排题型识别和提纲设计</td><td>独立完成结构设计</td></tr>
+        <tr><td>反馈</td><td>检查任务完成度和逻辑关系</td><td>修正结构问题</td></tr>
+      </table>
+      <h3>三、参考资料与学习方向</h3>
+      <p>本专题采用任务导向的写作教学框架。进一步学习时，可以重点参考以下资料类型：</p>
+      <ul>
+        <li>全国大学英语四、六级考试相关考试大纲及官方考试说明，了解考试目标和写作基本要求。</li>
+        <li>大学英语写作教材中有关议论文、说明文、比较分析和问题解决的章节。</li>
+        <li>Purdue Online Writing Lab（OWL）有关论文结构、段落组织和论证写作的学习材料。</li>
+        <li>大学英语写作课程中的真实范文，重点观察作者如何回应题目任务，而不只是积累句型。</li>
+      </ul>
+      <h3>四、与下一专题的衔接</h3>
+      <div class="callout gold">
+        专题二解决的是“文章应该怎样组织”。下一专题将进一步进入具体写作过程，重点学习开头、主体与结尾的写作方法，包括如何自然引入主题、如何提出中心观点，以及如何让文章结尾更加完整有力。
+      </div>
+      <p style="text-align:center;color:#8090a2;margin-top:45px;font-size:12px;letter-spacing:2px">END OF TOPIC 02</p>
+    </section>
+
+  </div>
+
+  <div class="footer">
+    <span>大学英语六级写作系统课程 · 专题二</span>
+    <span class="page-count" id="pageCount">01 / 28</span>
+    <span>STRUCTURE & ORGANIZATION</span>
+  </div>
+</main>
+
+<script>
+const deck = document.getElementById('deck');
+const pages = Array.from(deck.querySelectorAll('.page'));
+const toc = document.getElementById('toc');
+const progress = document.getElementById('progress');
+const pageCount = document.getElementById('pageCount');
+const status = document.getElementById('status');
+let current = 0;
+let editing = false;
+const storageKey = 'cet6_topic02_pages_v1';
+
+function buildTOC(){
+  toc.innerHTML = '';
+  let lastGroup = '';
+  pages.forEach((page,index)=>{
+    const group = page.dataset.group || '课程内容';
+    if(group !== lastGroup){
+      const heading = document.createElement('div');
+      heading.className = 'nav-heading';
+      heading.textContent = group;
+      toc.appendChild(heading);
+      lastGroup = group;
+    }
+    const btn = document.createElement('button');
+    btn.className = 'nav-item';
+    btn.type = 'button';
+    btn.dataset.index = index;
+    const number = String(index+1).padStart(2,'0');
+    btn.innerHTML = `<span class="nav-num">${number}</span><span>${page.dataset.title || '未命名页面'}</span>`;
+    btn.addEventListener('click',()=>showPage(index));
+    toc.appendChild(btn);
+  });
+}
+
+function showPage(index){
+  if(index < 0 || index >= pages.length) return;
+  current = index;
+  pages.forEach((page,i)=>page.classList.toggle('active',i===current));
+  document.querySelectorAll('.nav-item').forEach((btn,i)=>{
+    btn.classList.toggle('active',i===current);
+  });
+  progress.style.width = ((current+1)/pages.length*100)+'%';
+  pageCount.textContent = `${String(current+1).padStart(2,'0')} / ${String(pages.length).padStart(2,'0')}`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleEdit(){
+  editing = !editing;
+  document.body.classList.toggle('editing',editing);
+  pages.forEach(page=>{
+    page.contentEditable = editing ? 'true' : 'false';
+    page.querySelectorAll('button,input,textarea,select').forEach(el=>{
+      el.contentEditable = 'false';
+    });
+  });
+  document.getElementById('editBtn').textContent = editing ? '✓ 退出编辑' : '✎ 编辑模式';
+  status.textContent = editing ? '编辑模式已开启' : '阅读模式';
+}
+
+function savePages(){
+  const content = pages.map(page=>page.innerHTML);
+  try{
+    localStorage.setItem(storageKey,JSON.stringify(content));
+    status.textContent = '修改已保存到本机浏览器';
+  }catch(e){
+    status.textContent = '保存失败：浏览器存储空间可能不足';
+  }
+}
+
+function restorePages(){
+  if(!confirm('确定恢复专题二的原始讲义吗？你保存的修改将被清除。')) return;
+  localStorage.removeItem(storageKey);
+  location.reload();
+}
+
+function loadPages(){
+  try{
+    const saved = localStorage.getItem(storageKey);
+    if(!saved) return;
+    const content = JSON.parse(saved);
+    if(Array.isArray(content) && content.length===pages.length){
+      pages.forEach((page,i)=>page.innerHTML=content[i]);
+    }
+  }catch(e){
+    console.warn('读取本地保存内容失败',e);
+  }
+}
+
+function toggleAnswer(id){
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('show');
+}
+
+document.addEventListener('keydown',e=>{
+  if(editing) return;
+  if(e.key==='ArrowRight') showPage(Math.min(current+1,pages.length-1));
+  if(e.key==='ArrowLeft') showPage(Math.max(current-1,0));
+});
+
+buildTOC();
+loadPages();
+showPage(0);
+</script>
+</body>
+</html>
